@@ -14,6 +14,7 @@
 
 #параметры. в т.ч. e-mail, которые светить не стоит
 /config/params.php
+/config/*-local.php
 
 # phpstorm project files
 .idea
