@@ -8,6 +8,8 @@
 
 #db config
 /config/db.php
+/config/*-local.php
+/config/toProd.txt
 
 #параметры. в т.ч. e-mail, которые светить не стоит
 /config/params.php
