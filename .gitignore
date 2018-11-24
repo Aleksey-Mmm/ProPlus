@@ -1,5 +1,5 @@
 # yii
-/yii
+# /yii
 
 # htaccess files
 /.htaccess
@@ -8,7 +8,6 @@
 # чтоб не путались на боевом
 /web/index-test.php
 /web/index.php
-/config/toProd.txt
 
 #db config
 /config/db.php
@@ -17,7 +16,7 @@
 
 #параметры. в т.ч. e-mail, которые светить не стоит
 # /config/params.php
-/config/*-local.php
+#/config/*-local.php
 
 # phpstorm project files
 .idea
