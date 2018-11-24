@@ -25,6 +25,7 @@ $config = [
             ],
         ],
         'db' => $db,
+        'urlManager' => require __DIR__ . '/urlManager.php',
     ],
     'params' => $params,
     /*

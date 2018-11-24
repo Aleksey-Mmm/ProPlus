@@ -1,6 +1,9 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
+$params = \yii\helpers\ArrayHelper::merge(
+    require __DIR__ . '/params.php',
+    require __DIR__ . '/params-local.php'
+);
 $db = require __DIR__ . '/db.php';
 
 $config = [
@@ -43,16 +46,7 @@ $config = [
             ],
         ],
         'db' => $db,
-
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
-                '<_c:[\w\-]+>' => '<_c>/index',
-                '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
-            ],
-        ],
+        'urlManager' => require __DIR__ . '/urlManager.php',
 
     ],
     'params' => $params,

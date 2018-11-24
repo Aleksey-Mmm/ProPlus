@@ -8,6 +8,7 @@
 # чтоб не путались на боевом
 /web/index-test.php
 /web/index.php
+/config/toProd.txt
 
 #db config
 /config/db.php
