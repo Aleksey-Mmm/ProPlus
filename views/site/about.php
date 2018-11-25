@@ -15,4 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <code><?= __FILE__ ?></code>
+    <p>
+        <?php var_dump(Yii::$app->params); ?>
+    </p>
 </div>

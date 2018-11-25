@@ -1,6 +1,9 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
+$params = \yii\helpers\ArrayHelper::merge(
+    require __DIR__ . '/params.php',
+    require __DIR__ . '/params-local.php'
+);
 $db = require __DIR__ . '/db.php';
 
 $config = [
@@ -16,6 +19,9 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'hjBmN1t8dYkkrnfi1zP5aXGhyD89p7fJ',
         ],
+//        'assetManager' => [
+//            'linkAssets' => true,
+//        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -38,21 +44,18 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error'],
+                    'logFile' => '@app/runtime/logs/web-error.log',
+                ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['warning'],
+                    'logFile' => '@app/runtime/logs/web-warning.log',
                 ],
             ],
         ],
         'db' => $db,
-
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
-                '<_c:[\w\-]+>' => '<_c>/index',
-                '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
-            ],
-        ],
+        'urlManager' => require __DIR__ . '/urlManager.php',
 
     ],
     'params' => $params,
