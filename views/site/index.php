@@ -94,7 +94,7 @@ $this->title = 'Сервис';
         <tbody class="text-left">
                 <tr>
                     <th>Контактное лицо</th>
-                    <th>Телефон</th>
+                    <th class="wt20">Телефон</th>
 
                 </tr>
                 <tr>
@@ -131,13 +131,14 @@ $this->title = 'Сервис';
 
 </div>
 
-<!-- /Панель -->           
-<!-- Панель номенклатуры-->
+<!-- /Панель -->    
+
+<!-- Панель Услуг-->
 <div class="panel panel-default">
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Номенклатура </b> 
+        <b>Услуги</b> 
     </div> 
     <div class="btn-group">
         <button type="button" class="btn btn-sm btn-default">Добавить</button>
@@ -150,37 +151,90 @@ $this->title = 'Сервис';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th>№</th>
-                    <th>Наименование</th>
-                    <th>Серийный номер</th>
-                    <th>Кол-во</th>
+                    <th class="wt5">№</th>
+                    <th>Наименование услуги</th>
+                    <th class="wt20">Стоимость</th>
+
                 </tr>
                 <tr>
                     <td>1</td>
                     <td class="text-left">row 1,col 1</td>
                     <td>row 1,col 2</td>
-                    <td>row 1,col 3</td>
+
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td class="text-left">row 2,col 1</td>
+                    <td>row 2,col 2</td>
+
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td class="text-left">row 3,col 1</td>
+                    <td>row 3,col 2</td>
+
+                </tr>
+
+            </tbody>
+        </table> 
+  </div>
+</div>
+
+
+<!-- /Панель -->       
+              
+                            
+<!-- Панель оборудование-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+<div class="flex_left">
+    <div class="f-auto" >
+        <b>Оборудование</b> 
+    </div> 
+    <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-default">Добавить</button>
+    </div>
+     
+  </div>
+  
+  </div>
+  <div class="panel-body">
+    <table class="table table-bordered   table-hover table-condensed">
+            <tbody>
+                <tr>
+                    <th class="wt5">№</th>
+                    <th>Наименование</th>
+                    <th class="wt20">Серийный номер</th>
+                    <th class="wt10">Кол-во</th>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация скрыто если не введена</td>
+                    <td>1</td>
+                    <td class="text-left">row 1,col 1</td>
+                    <td>row 1,col 2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-left">Дополнительная информация для 1, скрыто если не введена</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td class="text-left">row 2,col 1</td>
                     <td>row 2,col 2</td>
-                    <td>row 2,col 3</td>
+                    <td>1</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация скрыто если не введена</td>
+                    <td colspan="4" class="text-left">Дополнительная информация для 2, скрыто если не введена</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td class="text-left">row 3,col 1</td>
                     <td>row 3,col 2</td>
-                    <td>row 3,col 3</td>
+                    <td>1</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация скрыто если не введена</td>
+                    <td colspan="4" class="text-left">Дополнительная информация для 3, скрыто если не введена</td>
                 </tr>
             </tbody>
         </table> 
@@ -195,7 +249,7 @@ $this->title = 'Сервис';
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Описание неисправности</b> 
+        <b>Комментарий</b> 
     </div>
 
     <div class="btn-group">
