@@ -41,6 +41,18 @@ AppAsset::register($this);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
+                [
+                    'label' => 'Разработка',
+                    'items' => [
+                        ['label' => 'стр1 - для разработки', 'url' => ['/front/page1']],
+                        '<li class="divider"></li>',
+                        '<li class="dropdown-header">еще страницы:</li>',
+                        ['label' => 'страница - 2', 'url' => ['/front/page2']],
+                        ['label' => 'страница - 3', 'url' => ['/front/page3']],
+                        ['label' => 'страница - 4', 'url' => ['/front/page4']],
+                        ['label' => 'страница - 5', 'url' => ['/front/page5']],
+                    ],
+                ],
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
@@ -124,6 +136,7 @@ AppAsset::register($this);
     </div>
 </div>
 
+<!--
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
@@ -131,7 +144,7 @@ AppAsset::register($this);
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
-
+!-->
 <?php $this->endBody() ?>
 </body>
 </html>
