@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 
+use app\entities\Sotrudnik;
 use yii\web\Controller;
 
 class FrontController extends Controller
@@ -35,7 +36,9 @@ class FrontController extends Controller
 
     public function actionPage5()
     {
-        return $this->render("page5");
+        $sotr = (new Sotrudnik());
+        $sotr->setFam("pupkin");
+        return $this->render("page5", compact('sotr'));
     }
 
 }

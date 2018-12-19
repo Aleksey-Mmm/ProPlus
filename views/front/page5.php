@@ -7,10 +7,11 @@
  */
 
 /* @var $this yii\web\View */
+/* @var $sotr app\entities\Sotrudnik */
 
 $this->title = 'Страница разработки морд - 5';
 
 ?>
 <div class="front-page5">
-
+<?= $sotr->getFam(); ?>
 </div>
