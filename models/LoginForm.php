@@ -8,12 +8,12 @@ use yii\base\Model;
 /**
  * LoginForm is the model behind the login form.
  *
- * @property User|null $user This property is read-only.
+ * @property Sotrudnik|null $user This property is read-only.
  *
  */
 class LoginForm extends Model
 {
-    public $username;
+    public $email;
     public $password;
     public $rememberMe = true;
 
@@ -27,7 +27,7 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['email', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -48,8 +48,13 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError('password', 'Неверное имя пользователя или пароль.');
+            } elseif ($user && ($user->status == Sotrudnik::STATUS_BLOCKED)) {
+                $this->addError('email', 'Ваш аккаунт заблокирован.');
+            } elseif ($user && ($user->status == Sotrudnik::STATUS_WAIT)) {
+                $this->addError('email', 'Ваш аккаунт не подтвержден.');
             }
+
         }
     }
 
@@ -68,12 +73,12 @@ class LoginForm extends Model
     /**
      * Finds user by [[username]]
      *
-     * @return User|null
+     * @return Sotrudnik|null
      */
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Sotrudnik::findByEmail($this->username);
         }
 
         return $this->_user;
