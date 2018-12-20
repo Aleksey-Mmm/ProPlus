@@ -28,8 +28,8 @@ use yii\web\IdentityInterface;
  */
 class Sotrudnik extends ActiveRecord implements IdentityInterface
 {
-    const STATUS_WAIT = 0;
-    const STATUS_ACTIVE = 1;
+    const STATUS_WAIT = 1;
+    const STATUS_ACTIVE = 0;
     const STATUS_BLOCKED = 2;
 
     /**
@@ -186,6 +186,92 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
         return false;
     }
 
+    /**
+     * для сброса пароля
+     *
+     * @param $token string
+     * @return null|Sotrudnik
+     */
+    public static function findByPasswordResetToken($token)
+    {
+        if (!static::isPasswordResetTokenValid($token)) {
+            return null;
+        }
+
+        return static::findOne([
+            'password_reset_token' => $token,
+            'status' => self::STATUS_ACTIVE
+        ]);
+
+    }
+
+    /**
+     * проверяем не просрочен ли токен
+     *
+     * @param $token string проверяемый токен
+     * @return bool
+     */
+    protected static function isPasswordResetTokenValid($token)
+    {
+        if (empty($token)) {
+            return false;
+        }
+        $expire = \Yii::$app->params['sotrudnik.passwordResetTokenExpire'];
+        $parts = explode('_', $token);
+        $timestamp = (int) end($parts);
+        return $timestamp + $expire >= time();
+    }
+
+    /**
+     * генерирует новый токен сброса пароля
+     *
+     * @throws \yii\base\Exception
+     */
+    public function generatePasswordResetToken()
+    {
+        $this->password_reset_token = \Yii::$app->security->generateRandomString(). '_'. time();
+    }
+
+    /**
+     *обнуляет токен сброса пароля
+     *
+     */
+    public function removePasswordResetToken()
+    {
+        $this->password_reset_token = null;
+    }
+
+    /**
+     * поиск сотрудника по токену подтверждения почты
+     *
+     * @param $token string
+     * @return null|Sotrudnik
+     */
+    public static function findByEmailConfirmToken($token)
+    {
+        return static::findOne([
+            'email_confirm_token' => $token,
+            'status' => self::STATUS_WAIT
+        ]);
+    }
+
+    /**
+     * генерирует токен подтверждения емайл
+     *
+     * @throws \yii\base\Exception
+     */
+    public function generateEmailConfirmToken()
+    {
+        $this->email_confirm_token = \Yii::$app->security->generateRandomString();
+    }
+
+
+    public function removeEmailConfirmToken()
+    {
+        $this->email_confirm_token = null;
+    }
+
+
     //--- Identity
 
     /**
@@ -253,7 +339,7 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        // TODO: Implement validateAuthKey() method.
+
         return $this->getAuthKey() === $authKey;
     }
 }
