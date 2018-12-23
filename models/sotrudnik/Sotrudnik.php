@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\sotrudnik;
 
 //use Yii;
 use yii\base\NotSupportedException;
@@ -300,6 +300,7 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null)
     {
         throw new NotSupportedException('Эта функция находится в разработке.');
+
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\sotrudnik;
 
 use Yii;
 use yii\base\Model;
@@ -27,7 +27,7 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['email', 'password'], 'required'],
+            [['email', 'password'], 'required', 'message' => 'Нужно заполнить.'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
