@@ -65,14 +65,21 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    /**
+     * обработка регистрации нового сотрудника - админа сервиса
+     *
+     * @return Response|string
+     * @throws \yii\base\Exception
+     */
     public function actionSignup()
     {
         $model = new SignupForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->validate()) {
-                // form inputs are valid, do something here
-                return;
+            // form inputs are valid, do something here
+            if ($model->signUp()) {
+                Yii::$app->getSession()->setFlash('success', 'Подтвердите ваш электронный адрес.');
+                return $this->goHome();
             }
         }
 

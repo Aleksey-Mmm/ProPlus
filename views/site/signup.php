@@ -19,8 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'name')->textInput(); ?>
     <?= $form->field($model, 'otch')->textInput(); ?>
     <?= $form->field($model, 'email')->textInput(); ?>
-    <?= $form->field($model, 'verifyCode')->widget(Captcha::class, [
-       // 'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+    <?= $form->field($model, 'verCode')->widget(Captcha::class, [
+        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
     ]) ?>
 
     <div class="form-group">

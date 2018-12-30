@@ -12,5 +12,9 @@
 $confirmLink = Yii::$app->urlManager->createAbsoluteUrl([
     '/site/email-confirm', 'token' => $sotrudnik->email_confirm_token
 ]);
+?>
 
-//TODO:: дописать шаблон
+Здравствуйте <?= $sotrudnik->name. ' '. $sotrudnik->otch; ?>.
+Для подтверждения этого почтового адреса пройдите по ссылке: <br>
+<?= \yii\helpers\Html::a('Подтвердить.', $confirmLink); ?><br>
+Если Вы не регистрировались на нашем сайте, то самое время зарегистрироваться сейчас! А это письмо просто удалите..

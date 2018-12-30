@@ -40,10 +40,7 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
         return 'sotrudnik';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
+    public static function sotrudnikRules()
     {
         return [
             ['email', 'email', 'message' => 'Ввдите корректный емайл!'],
@@ -72,6 +69,14 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
             //[['fam', 'name', 'otch', 'email_confirm_token', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             //[['auth_key'], 'string', 'max' => 32],
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return self::sotrudnikRules();
     }
 
     /**

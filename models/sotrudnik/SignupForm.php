@@ -17,17 +17,12 @@ class SignupForm extends Model
     public $fam;
     public $otch;
     public $email;
-    public $verifyCode;
+    public $verCode;
+    public $status;
 
     public function rules()
     {
-        return [
-            [['name', 'fam', 'email', 'otch'], 'filter', 'filter' => 'trim'],
-            [['name', 'fam', 'email'], 'required', 'message' => 'Нужно заполнить'],
-            [['email'], 'email', 'message' => 'Ввдите корректный емайл!'],
-            [['name', 'fam', 'email', 'otch'], 'string', 'max' => 255, 'message' => 'Не более 255 символов'],
-            ['verifyCode', 'captcha'],
-        ];
+        return Sotrudnik::sotrudnikRules();
     }
 
     public function attributeLabels()
@@ -36,7 +31,7 @@ class SignupForm extends Model
           'name' => 'Имя',
           'fam' => 'Фамилия',
           'otch' => 'Отчество',
-          'verifyCode' => 'Капча',
+          'verCode' => 'Капча',
         ];
     }
 
@@ -49,6 +44,7 @@ class SignupForm extends Model
      */
     public function signUp()
     {
+
         if ($this->validate()) {
             $sotrudnik = new Sotrudnik();
             $sotrudnik->name = $this->name;
@@ -63,14 +59,19 @@ class SignupForm extends Model
             $sotrudnik->generateEmailConfirmToken();
 
             if ($sotrudnik->save()) {
-                \Yii::$app->mailer->compose('confirmEmail', ['sotrudnik' => $sotrudnik])
+                \Yii::$app->mailer->compose('confirmEmail', compact('sotrudnik', 'tempPassword'))
                     ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name])
                     ->setTo($sotrudnik->email)
                     ->setSubject('Подтверждение регистрации для '. $sotrudnik->name. ' '. $sotrudnik->otch)
                     ->send();
-                return $sotrudnik;
+                //var_dump($sotrudnik);
+                return ($sotrudnik);
+            } else {
+               \Yii::$app->getSession()->setFlash('error', $this->getErrors()[0]);
+                //echo "err - ". $this->getErrors();
             }
         }
+        //var_dump( $this->getErrors());
         return null;
     }
 
