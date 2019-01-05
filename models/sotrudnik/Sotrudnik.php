@@ -32,6 +32,8 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
     const STATUS_ACTIVE = 0;
     const STATUS_BLOCKED = 2;
 
+    public $username;
+
     /**
      * {@inheritdoc}
      */
@@ -288,8 +290,9 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        $sotrudnik =  static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        $sotrudnik->username = $sotrudnik->name;
+        return $sotrudnik;
     }
 
     /**

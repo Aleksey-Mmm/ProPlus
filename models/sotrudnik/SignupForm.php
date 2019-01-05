@@ -66,9 +66,6 @@ class SignupForm extends Model
                     ->send();
                 //var_dump($sotrudnik);
                 return ($sotrudnik);
-            } else {
-               \Yii::$app->getSession()->setFlash('error', $this->getErrors()[0]);
-                //echo "err - ". $this->getErrors();
             }
         }
         //var_dump( $this->getErrors());

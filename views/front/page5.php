@@ -14,4 +14,5 @@ $this->title = 'Страница разработки морд - 5';
 ?>
 <div class="front-page5">
 <?= $sotr->getFam(); ?>
+<?= Yii::$app->user->isGuest ? "ggggg" : Yii::$app->user->identity->username?>
 </div>

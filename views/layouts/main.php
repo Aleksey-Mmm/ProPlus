@@ -62,7 +62,7 @@ AppAsset::register($this);
                     '<li>'
                     . Html::beginForm(['/site/logout'], 'post')
                     . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
+                        'Logout',
                         ['class' => 'btn btn-link logout']
                     )
                     . Html::endForm()
@@ -71,7 +71,8 @@ AppAsset::register($this);
             ],
         ]);
     } catch (Exception $e) {
-        throw new \http\Exception\BadUrlException("Ошибка навигации.");
+        //throw new \http\Exception\BadUrlException("Ошибка навигации.");
+        //throw new \http\Exception\BadUrlException("Ошибка навигации.");
     }
     NavBar::end();
 

@@ -2,9 +2,11 @@
 
 namespace app\controllers;
 
+use app\models\sotrudnik\EmailConfirmForm;
 use app\models\sotrudnik\SignupForm;
 use Yii;
 use yii\filters\AccessControl;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -53,6 +55,33 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    /**
+     * подтверждение емайл по ссылке из письма
+     * отправляем на него пароль для входа.
+     *
+     * @param $token
+     * @return Response
+     * @throws BadRequestHttpException
+     * @throws \yii\base\Exception
+     */
+    public function actionEmailConfirm($token)
+    {
+        try {
+            $model = new EmailConfirmForm($token);
+        } catch (\InvalidArgumentException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        if ($model->confirmEmail()) {
+            Yii::$app->getSession()->setFlash("success", "Емайл подтвержден. На него высланы реквизиты для входа.");
+        } else {
+            Yii::$app->getSession()->setFlash("error", "Ошибка подтверждения емайл.");
+
+        }
+
+        return $this->goHome();
     }
 
     /**
