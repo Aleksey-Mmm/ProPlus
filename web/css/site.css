@@ -56,6 +56,10 @@
 }
 
 /* Таблицы ширина столбца*/
+.wt2
+{
+    width: 2%;
+}
 .wt5
 {
     width: 5%;
@@ -68,3 +72,25 @@
 {
     width: 20%;
 }
+
+.ct
+{
+    text-align: center;
+}
+.lt
+{
+    text-align: left;
+}
+.cur
+{
+    cursor: pointer;
+}
+.bl70
+{
+    width: 70%;
+}
+.bl2
+{
+    width: 50%;
+}
+

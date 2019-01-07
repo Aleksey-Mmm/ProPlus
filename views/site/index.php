@@ -6,6 +6,9 @@ $this->title = 'Сервис';
 ?>
 
 <div class="jumbotron">
+
+
+
 <!-- Панель бланк -->
 <div class="panel panel-default">
 <div class="panel-heading">
@@ -45,10 +48,20 @@ $this->title = 'Сервис';
 <div class="flex_left">
     <div class="f-auto" >
         <b>Заказчик</b> 
-    </div> 
-  
-       <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Выбрать</button>
+    </div>
+
+    <div class="btn-group">
+    <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+      Выбрать
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Организация</a></li>
+      <li><a href="#">Клиент</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Редактор</a></li>      
+    </ul>
+
      </div>
      
   </div>
@@ -66,12 +79,15 @@ $this->title = 'Сервис';
                 </tr>
         </tbody>
     </table>
-                        
+    Кнопка Выбрать. В меню выбирается или предприятие или  клиент
+    для каждого своя таблица  . Если организация то помимо выбора организации дополнительно выбрать контактное лица (через справочники)                  
   </div>
 
 </div>
 
-<!-- /Панель -->      
+<!-- /Панель -->   
+
+       
 <!-- Панель к. лицо -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -93,8 +109,8 @@ $this->title = 'Сервис';
     <table class="table table-bordered  table-striped  table-hover  table-condensed ">
         <tbody class="text-left">
                 <tr>
-                    <th>Контактное лицо</th>
-                    <th class="wt20">Телефон</th>
+                    <th>Представитель</th>
+                    <th class="wt20 ct">Телефон</th>
 
                 </tr>
                 <tr>
@@ -111,6 +127,7 @@ $this->title = 'Сервис';
 </div>
 
 <!-- /Панель -->
+
 
 <!-- Панель доп инфо -->
 <div class="panel panel-default">
@@ -151,15 +168,17 @@ $this->title = 'Сервис';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5">№</th>
+                    <th class="wt5 ct">№</th>
                     <th>Наименование услуги</th>
-                    <th class="wt20">Стоимость</th>
+                    <th class="wt20 ct">Стоимость</th>
+                    <th class="wt2 ct"></th>
 
                 </tr>
                 <tr>
                     <td>1</td>
                     <td class="text-left">row 1,col 1</td>
                     <td>row 1,col 2</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
 
                 </tr>
 
@@ -167,6 +186,7 @@ $this->title = 'Сервис';
                     <td>2</td>
                     <td class="text-left">row 2,col 1</td>
                     <td>row 2,col 2</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
 
                 </tr>
 
@@ -174,6 +194,7 @@ $this->title = 'Сервис';
                     <td>3</td>
                     <td class="text-left">row 3,col 1</td>
                     <td>row 3,col 2</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
 
                 </tr>
 
@@ -184,7 +205,9 @@ $this->title = 'Сервис';
 
 
 <!-- /Панель -->       
-              
+
+                        
+                         
                             
 <!-- Панель оборудование-->
 <div class="panel panel-default">
@@ -204,37 +227,41 @@ $this->title = 'Сервис';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5">№</th>
-                    <th>Наименование</th>
-                    <th class="wt20">Серийный номер</th>
-                    <th class="wt10">Кол-во</th>
+                    <th class="wt5 ct">№</th>
+                    <th class="ct">Наименование</th>
+                    <th class="wt20 ct">Серийный номер</th>
+                    <th class="wt10 ct">Кол-во</th>
+                    <th class="wt2 ct"></th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td class="text-left">row 1,col 1</td>
                     <td>row 1,col 2</td>
                     <td>1</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация для 1, скрыто если не введена</td>
+                    <td colspan="5" class="text-left">Дополнительная информация для 1, скрыто если не введена</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td class="text-left">row 2,col 1</td>
                     <td>row 2,col 2</td>
                     <td>1</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация для 2, скрыто если не введена</td>
+                    <td colspan="5" class="text-left">Дополнительная информация для 2, скрыто если не введена</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td class="text-left">row 3,col 1</td>
                     <td>row 3,col 2</td>
                     <td>1</td>
+                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-left">Дополнительная информация для 3, скрыто если не введена</td>
+                    <td colspan="5" class="text-left">Дополнительная информация для 3, скрыто если не введена</td>
                 </tr>
             </tbody>
         </table> 
@@ -244,12 +271,13 @@ $this->title = 'Сервис';
 
 <!-- /Панель -->
 
-<!-- Панель описания -->
+
+<!-- Панель комментарий -->
 <div class="panel panel-default">
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Комментарий</b> 
+        <b>Комментарий клиента</b> 
     </div>
 
     <div class="btn-group">
@@ -276,8 +304,10 @@ $this->title = 'Сервис';
 
 </div>
 
-<!-- /Панель -->      
-      
+<!-- /Панель комментарий --> 
+
+
+            
 <!-- Панель исполнителя -->
 <div class="panel panel-default">
   <div class="panel-heading">
