@@ -41,4 +41,64 @@ class FrontController extends Controller
         return $this->render("page5", compact('sotr'));
     }
 
+    public function actionPage6()
+    {
+        return $this->render("page6");
+    }
+
+    public function actionPage7()
+    {
+        return $this->render("page7");
+    }
+    public function actionPage8()
+    {
+        return $this->render("page8");
+    }
+    public function actionPage9()
+    {
+        return $this->render("page9");
+    }
+    public function actionPage10()
+    {
+        return $this->render("page10");
+    }
+    public function actionPage11()
+    {
+        return $this->render("page11");
+    }
+    public function actionPage12()
+    {
+        return $this->render("page12");
+    }
+    public function actionPage13()
+    {
+        return $this->render("page13");
+    }
+    public function actionPage14()
+    {
+        return $this->render("page14");
+    }
+    public function actionPage15()
+    {
+        return $this->render("page15");
+    }
+    public function actionPage16()
+    {
+        return $this->render("page16");
+    }
+    public function actionPage17()
+    {
+        return $this->render("page17");
+    }
+    public function actionPage18()
+    {
+        return $this->render("page18");
+    }
+    public function actionPage19()
+    {
+        return $this->render("page19");
+    }
+    
+    
+
 }

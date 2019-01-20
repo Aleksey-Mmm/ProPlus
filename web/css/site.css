@@ -2,7 +2,7 @@
     text-align: center;
     background-color: transparent;
 }
-
+.gi-x{font-size: 1.2em;}
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
 .gi-4x{font-size: 4em;}
@@ -13,6 +13,18 @@
     -webkit-flex: auto; 
     flex: auto;    
 }
+/*
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+*/
+
+
+
+
 /*Поле для расположение блоков слева*/
 .flex_left
 {
@@ -71,11 +83,26 @@
 {
     width: 10%;
 }
+.wt15
+{
+    width: 15%;
+}
 .wt20
 {
     width: 20%;
 }
-
+.wt30
+{
+    width: 30%;
+}
+.wt80
+{
+    width: 80%;
+}
+.wt100
+{
+    width: 100%;
+}
 .ct
 {
     text-align: center;

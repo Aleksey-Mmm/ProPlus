@@ -471,7 +471,7 @@ $this->title = 'Страница разработки морд - 3';
 <br>
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                        <input class="form-control" type="date" placeholder="Телефон"  id="example-date-input">
+                        <input class="form-control" type="date" placeholder=""  id="example-date-input">
                     </div> 
 <br>
 

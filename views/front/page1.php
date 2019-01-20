@@ -7,7 +7,7 @@
  */
 
 /* @var $this yii\web\View */
-
+use yii\helpers\Url;
 $this->title = 'Страница разработки морд - 1';
 
 ?>
@@ -25,6 +25,7 @@ $this->title = 'Страница разработки морд - 1';
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-default">Новый</button>
                 <button type="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-print"></span></button>
+                <a href="<?= Url::to(['front/page4']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
             </div>
     </div>
 </div>
@@ -36,20 +37,48 @@ $this->title = 'Страница разработки морд - 1';
 <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Услуга</b> 
+        <b>Услуга ХХХХ ХХХХХХ</b> 
     </div> 
 
         <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-default">Выбрать</button>
+            <a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">Выбрать</a>
         </div>
      
     </div>
 </div>
 </div>
-<!-- /Панель -->
 
-<!-- Панель Заказчик -->
+
+<!-- /Панель выбор бланка -->
+
+<!-- Панель  заказчик -->
 <div class="panel panel-default">
+<div class="panel-heading">
+<div class="flex_left">
+    <div class="f-auto" >
+        <b>Заказчик</b> 
+    </div> 
+
+    <div class="btn-group">
+    <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+        Выбрать
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="<?= Url::to(['front/page6']);?>">Организация</a></li>
+        <li class="divider"></li>
+        <li><a href="<?= Url::to(['front/page7']);?>">Клиент</a></li>
+    </ul>
+
+     </div>
+     
+    </div>
+</div>
+</div>
+<!-- Панель  заказчик -->
+
+<!-- Панель Заказчик после выбора организации -->
+<div class="panel panel-success">
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
@@ -58,14 +87,13 @@ $this->title = 'Страница разработки морд - 1';
 
     <div class="btn-group">
     <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-      Выбрать
-      <span class="caret"></span>
+        Выбрать
+        <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#">Организация</a></li>
-      <li><a href="#">Клиент</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Редактор</a></li>      
+        <li><a href="<?= Url::to(['front/page6']);?>">Организация</a></li>
+        <li class="divider"></li>
+        <li><a href="<?= Url::to(['front/page7']);?>">Клиент</a></li>
     </ul>
 
      </div>
@@ -75,7 +103,7 @@ $this->title = 'Страница разработки морд - 1';
   </div>
   <div class="panel-body">
    
-    <table class="table table-bordered  table-striped  table-hover  table-condensed ">
+    <table class="table table-bordered  table-striped  table-condensed ">
         <tbody class="text-left">
                 <tr>
                     <th>Организация</th>
@@ -85,76 +113,99 @@ $this->title = 'Страница разработки морд - 1';
                 </tr>
         </tbody>
     </table>
-    Кнопка Выбрать. В меню выбирается или предприятие или  клиент
-    для каждого своя таблица  . Если организация то помимо выбора организации дополнительно выбрать контактное лица (через справочники)                  
-  </div>
-
-</div>
-
-<!-- /Панель -->   
-
-       
-<!-- Панель к. лицо -->
+ 
+<!-- Панель  к. лицо -->
 <div class="panel panel-default">
-  <div class="panel-heading">
+<div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Контактное лицо</b> 
+        <b>Представитель</b> 
     </div> 
-  
+
         <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Выбрать</button>
+        <a href="<?= Url::to(['front/page12']); ?>" class="btn btn-sm btn-default">Выбрать</a>
         </div>
      
-  </div>
-  
-  </div>
-  <div class="panel-body">
-  
-     
-    <table class="table table-bordered  table-striped  table-hover  table-condensed ">
+    </div>
+</div>
+</div>
+<!-- /Панель  к. лицо  --> 
+
+    <table class="table table-bordered  table-striped  table-condensed ">
         <tbody class="text-left">
                 <tr>
-                    <th>Представитель</th>
+                    <th class="ct">Ф.И.О</th>
                     <th class="wt20 ct">Телефон</th>
 
                 </tr>
                 <tr>
                     <td class="text-left">Иванов Иван Иванович</td>
-                    <td>98143213214</td>
+                    <td class="ct">98143213214</td>
                 </tr>
         </tbody>
     </table>
 
-                
-                                
+               
+Отображается кога выбрана Организация    
+Пока представитель не выбран таблица не видима                                          
   </div>
 
 </div>
 
-<!-- /Панель -->
+<!-- /Панель к. лицо-->   
 
-
-<!-- Панель доп инфо -->
-<div class="panel panel-default">
+      
+       
+<!-- Панель к. лицо после выбора -->
+<div class="panel panel-success">
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Дополнительная информация</b> 
+        <b>Заказчик</b> 
     </div> 
+  
+    <div class="btn-group">
+    <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+        Выбрать
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="<?= Url::to(['front/page6']);?>">Организация</a></li>
+        <li class="divider"></li>
+        <li><a href="<?= Url::to(['front/page7']);?>">Клиент</a></li>
+    </ul>
+
+     </div>
      
   </div>
   
   </div>
   <div class="panel-body">
-    
-     <input type="text" class="form-control" placeholder="Адрес доставки"> <br>               
-     <input type="text" class="form-control" placeholder="Пароль для передачи оборудования">                          
+  
+     
+    <table class="table table-bordered  table-striped  table-condensed ">
+        <tbody class="text-left">
+                <tr>
+                    <th class="ct">Ф.И.О</th>
+                    <th class="wt20 ct">Телефон</th>
+
+                </tr>
+                <tr>
+                    <td class="text-left">Иванов Иван Иванович</td>
+                    <td class="ct">98143213214</td>
+                </tr>
+        </tbody>
+    </table>
+
+Отображается кога выбран Частное лицо                   
+                                
   </div>
 
 </div>
 
-<!-- /Панель -->    
+<!-- /Панель к. лицо после выбора -->
+
+
 
 <!-- Панель Услуг-->
 <div class="panel panel-default">
@@ -164,7 +215,7 @@ $this->title = 'Страница разработки морд - 1';
         <b>Услуги</b> 
     </div> 
     <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Добавить</button>
+        <a href="<?= Url::to(['front/page14']); ?>" class="btn btn-sm btn-default">Добавить</a>
     </div>
      
   </div>
@@ -210,7 +261,7 @@ $this->title = 'Страница разработки морд - 1';
 </div>
 
 
-<!-- /Панель -->       
+<!-- /Панель Услуг -->       
 
                         
                          
@@ -223,7 +274,7 @@ $this->title = 'Страница разработки морд - 1';
         <b>Оборудование</b> 
     </div> 
     <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Добавить</button>
+        <a href="<?= Url::to(['front/page15']); ?>" class="btn btn-sm btn-default">Добавить</a>
     </div>
      
   </div>
@@ -244,7 +295,7 @@ $this->title = 'Страница разработки морд - 1';
                     <td class="text-left">row 1,col 1</td>
                     <td>row 1,col 2</td>
                     <td>1</td>
-                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    <td><a href="#myModal2" class="btn btn-xs btn-default" data-toggle="modal"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 </tr>
                 <tr>
                     <td colspan="5" class="text-left">Дополнительная информация для 1, скрыто если не введена</td>
@@ -254,7 +305,7 @@ $this->title = 'Страница разработки морд - 1';
                     <td class="text-left">row 2,col 1</td>
                     <td>row 2,col 2</td>
                     <td>1</td>
-                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    <td><a href="#myModal2" class="btn btn-xs btn-default" data-toggle="modal"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 </tr>
                 <tr>
                     <td colspan="5" class="text-left">Дополнительная информация для 2, скрыто если не введена</td>
@@ -264,7 +315,7 @@ $this->title = 'Страница разработки морд - 1';
                     <td class="text-left">row 3,col 1</td>
                     <td>row 3,col 2</td>
                     <td>1</td>
-                    <td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    <td><a href="#myModal2" class="btn btn-xs btn-default" data-toggle="modal"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 </tr>
                 <tr>
                     <td colspan="5" class="text-left">Дополнительная информация для 3, скрыто если не введена</td>
@@ -278,6 +329,7 @@ $this->title = 'Страница разработки морд - 1';
 <!-- /Панель -->
 
 
+
 <!-- Панель комментарий -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -287,13 +339,13 @@ $this->title = 'Страница разработки морд - 1';
     </div>
 
     <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Добавить</button>
+        <a href="#myModal3" class="btn btn-sm btn-default" data-toggle="modal">Добавить</a>
         <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
         <span class="sr-only"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Добавить</a></li>
+            <li><a href="<?= Url::to(['front/page13']); ?>">Редактор</a></li>
             <li class="divider"></li>
             <li><a href="#">Очистить</a></li>
         </ul>
@@ -323,13 +375,13 @@ $this->title = 'Страница разработки морд - 1';
     </div>
 
     <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-default">Выбрать</button>
+        <a href="#myModal4" class="btn btn-sm btn-default" data-toggle="modal">Выбрать</a>
         <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
         <span class="caret"></span>
         <span class="sr-only"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Выбрать</a></li>
+            <li><a href="#myModal4" data-toggle="modal">Выбрать</a></li>
             <li class="divider"></li>
             <li><a href="#">Удалить</a></li>
         </ul>
@@ -352,6 +404,205 @@ $this->title = 'Страница разработки морд - 1';
 </div>
 
 <!-- /Панель -->      
+
+
+
+<!-- Модальгное окно 1 -->
+
+    <div id="myModal1" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Выбор услуги</h4>
+                </div>
+                <div class="modal-body">
+
+    <table class="table table-bordered  table-striped  table-hover  table-condensed">
+        <tbody class="text-left">
+                <tr>
+                    <th class="text-center">Услуга</th>
+
+                </tr>
+                <tr class="cur">
+                    <td class="text-left ">Наименование услуги 1</td>
+
+                </tr>
+                
+                <tr class="cur">
+                    <td class="text-left">Наименование услуги 2</td>
+                </tr>
+                <tr class="cur">
+                    <td class="text-left">Наименование услуги 3</td>
+                </tr>                
+        </tbody>
+    </table>
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /Модальгное окно 1 -->
+
+
+
+
+<!-- Модальгное окно 2 -->
+
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Оборудование</h4>
+                </div>
+                <div class="modal-body">
+
+    <div class="flex_center"> 
+        <div class="wt80">
+<label> Наименование выбранной номенклатуры</label>
+<br>
+<br>
+            <div class="row">
+                <div class="col-xs-9">
+                    <input class="form-control" type="text" placeholder="Серийный номер">
+                </div> 
+                <div class="col-xs-3">
+                    <input class="form-control ct" type="text" placeholder="кол-во">
+                </div>
+            </div> 
+    <br> 
+    <textarea class="form-control" rows="3" placeholder="Дополнительная информация"></textarea>                        
+                    
+        </div>
+    </div>
+            </div> 
+
+                <div class="modal-footer">
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Сохранить</button>
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span></button> 
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+        </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /Модальгное окно 2 -->
+
+<!-- Модальгное окно 3 -->
+
+<div id="myModal3" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Текстовые вставки</h4>
+            </div>
+    <div class="modal-body">
+ 
+     
+    <table class="table table-bordered  table-striped table-hover table-condensed ">
+        <tbody class="text-left">
+                <tr>
+                    <th colspan="2" class="ct">Список</th>
+
+
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Текстовая вставка 1</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Текстовая вставка 2</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Текстовая вставка 3</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Текстовая вставка 4</td>
+                </tr>
+
+
+        </tbody>
+    </table>
+
+
+        </div>
+    <div class="modal-footer">
+                    
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+        </div>
+                
+    </div>        
+        
+        
+    </div>
+    </div>
+</div>    
+    
+<!-- /Модальгное окно 3 -->
+
+<!-- Модальгное окно 4 -->
+
+<div id="myModal4" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Исполнители</h4>
+            </div>
+    <div class="modal-body">
+ 
+     
+    <table class="table table-bordered  table-striped table-hover table-condensed ">
+        <tbody class="text-left">
+                <tr>
+                    <th colspan="2" class="ct">Список</th>
+
+
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Исполнитель 1</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Исполнитель 2</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Исполнитель 3</td>
+                </tr>
+                <tr class="cur">
+                    <td class="lt">Исполнитель 4</td>
+                </tr>
+
+
+        </tbody>
+    </table>
+
+
+        </div>
+    <div class="modal-footer">
+                    
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+        </div>
+                
+    </div>        
+        
+        
+    </div>
+    </div>
+</div>    
+    
+<!-- /Модальгное окно 4 -->
+
+
+
       
   
 </div>

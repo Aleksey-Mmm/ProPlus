@@ -51,6 +51,7 @@ AppAsset::register($this);
                         ['label' => 'страница - 3', 'url' => ['/front/page3']],
                         ['label' => 'страница - 4', 'url' => ['/front/page4']],
                         ['label' => 'страница - 5', 'url' => ['/front/page5']],
+                        ['label' => 'страница - 6', 'url' => ['/front/page6']],
                     ],
                 ],
                 ['label' => 'Home', 'url' => ['/site/index']],
