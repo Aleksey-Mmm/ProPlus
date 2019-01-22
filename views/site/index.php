@@ -40,4 +40,10 @@ $this->title = 'Сервис';
         </a> 
     </div>
 
+    <div class="row">
+        <a href="<?= Url::to(['front/page10']); ?>">
+            Конструктор бланков (разработка)
+        </a>
+    </div>
+
 </div>

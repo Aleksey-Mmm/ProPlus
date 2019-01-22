@@ -15,6 +15,8 @@ use yii\base\Model;
 class EmailConfirmForm extends Model
 {
     private $_sotrudnik;
+   // public $group;
+   // public $predpr_id;
 
     /**
      * EmailConfirmForm constructor.

@@ -13,6 +13,7 @@ use yii\web\IdentityInterface;
  * This is the model class for table "sotrudnik".
  *
  * @property int $id
+ * @property int $predpr_id
  * @property int $created_at
  * @property int $updated_at
  * @property string $fam
@@ -31,6 +32,12 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
     const STATUS_WAIT = 1;
     const STATUS_ACTIVE = 0;
     const STATUS_BLOCKED = 2;
+
+    //константы для групп сотрудников
+    const GROUP_ADMIN = 2;
+    const GROUP_MANAGER = 4;
+    const GROUP_ENGINEER = 8;
+
 
     public $username;
 
@@ -65,6 +72,7 @@ class Sotrudnik extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
 
+            ['predpr_id', 'integer'],
 
             //[['created_at', 'updated_at', 'fam', 'name', 'password_hash', 'email'], 'required'],
             //[['created_at', 'updated_at', 'status', 'group'], 'integer'],

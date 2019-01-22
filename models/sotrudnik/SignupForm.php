@@ -19,6 +19,7 @@ class SignupForm extends Model
     public $email;
     public $verCode;
     public $status;
+    public $predpr_id;
 
     public function rules()
     {
@@ -39,19 +40,22 @@ class SignupForm extends Model
      * проверка введенного, создание сотрудника,
      * сохранение сотрудника в бд, отправка запроса подтверждения емайл
      *
+     * @param int $group //к какой группе относится создаваемый сотрудник
+     * @param int $predpr_id //сотрудник какого предприятия. при создании админа = 0 (нет еще предприятия)
      * @return Sotrudnik|null
      * @throws \yii\base\Exception
      */
-    public function signUp()
+    public function signUp($group = Sotrudnik::GROUP_ENGINEER, $predpr_id = 0)
     {
 
         if ($this->validate()) {
             $sotrudnik = new Sotrudnik();
+            $sotrudnik->predpr_id = $predpr_id;
             $sotrudnik->name = $this->name;
             $sotrudnik->fam = $this->fam;
             $sotrudnik->otch = $this->otch;
             $sotrudnik->email = $this->email;
-            $sotrudnik->group = 2;
+            $sotrudnik->group = $group;
             $sotrudnik->status = Sotrudnik::STATUS_WAIT;
             $tempPassword = \Yii::$app->security->generateRandomString(6);
             $sotrudnik->setPassword($tempPassword);

@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\predpr\Predpr;
 use app\models\sotrudnik\EmailConfirmForm;
 use app\models\sotrudnik\SignupForm;
+use app\models\sotrudnik\Sotrudnik;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\BadRequestHttpException;
@@ -74,14 +76,36 @@ class SiteController extends Controller
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        if ($model->confirmEmail()) {
+        if ($sotrudnik = $model->confirmEmail()) { //возвращенного сотрудника сохраняем (если вернулся)
             Yii::$app->getSession()->setFlash("success", "Емайл подтвержден. На него высланы реквизиты для входа.");
+            //если подтвердился емайл админа, и он еще не привязан к предприятию
+            //создаем предприятие для нового админа и связываем их
+            /** @var Sotrudnik $model */
+            //echo $sotrudnik->group . ' === '. $sotrudnik->predpr_id;
+            if ($sotrudnik->group == Sotrudnik::GROUP_ADMIN && $sotrudnik->predpr_id == 0) {
+                //echo "tuuuuuuuutttt";
+                $sotrudnik->predpr_id = $this->createPredpr();
+                $sotrudnik->save();
+            }
         } else {
             Yii::$app->getSession()->setFlash("error", "Ошибка подтверждения емайл.");
 
         }
 
         return $this->goHome();
+    }
+
+    /**
+     * создание предприятия для зарегистрировашегося админа
+     *
+     * @return int //ид только что созданного предприятия
+     */
+    protected function createPredpr()
+    {
+        $predpr = new Predpr();
+        $predpr->name = 'Новый сервисный центр.';
+        $predpr->save();
+        return $predpr->id;
     }
 
     /**
@@ -106,7 +130,7 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             // form inputs are valid, do something here
-            if ($model->signUp()) {
+            if ($model->signUp()) { //нужно передать, к какой группе будет относиться
                 Yii::$app->getSession()->setFlash('success', 'Подтвердите ваш электронный адрес.');
                 return $this->goHome();
             }
