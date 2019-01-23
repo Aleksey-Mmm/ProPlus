@@ -130,7 +130,8 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             // form inputs are valid, do something here
-            if ($model->signUp()) { //нужно передать, к какой группе будет относиться
+            //здесь создаем только админа.
+            if ($model->signUp(Sotrudnik::GROUP_ADMIN)) { //нужно передать, к какой группе будет относиться
                 Yii::$app->getSession()->setFlash('success', 'Подтвердите ваш электронный адрес.');
                 return $this->goHome();
             }
