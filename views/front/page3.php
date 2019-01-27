@@ -24,8 +24,8 @@ $this->title = 'Страница разработки морд - 3';
         <tbody class="text-left">
                 <tr>
                     
-                    <th class="wt2 ct"></th>
-                    <th class="wt20 ct"></th>
+                    <th class="wb2 ct"></th>
+                    <th class="wb20 ct"></th>
 
                 </tr>
                 <tr class="cur">
@@ -282,7 +282,7 @@ $this->title = 'Страница разработки морд - 3';
         <tbody class="text-left">
                 <tr>
                     <th>Представитель</th>
-                    <th class="wt20 ct">Телефон</th>
+                    <th class="wb20 ct">Телефон</th>
 
                 </tr>
                 <tr>
@@ -323,8 +323,8 @@ $this->title = 'Страница разработки морд - 3';
         <tbody class="text-left">
                 <tr>
                     <th class="ct">Контактные лица</th>
-                    <th class="wt20 ct">Телефон</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Телефон</th>
+                    <th class="wb2 ct"></th>
 
                 </tr>
                 <tr class="cur">
@@ -384,8 +384,8 @@ $this->title = 'Страница разработки морд - 3';
         <tbody class="text-left">
                 <tr>
                     <th class="ct">ФИО</th>
-                    <th class="wt20 ct">Телефон</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Телефон</th>
+                    <th class="wb2 ct"></th>
 
                 </tr>
                 <tr class="cur">
@@ -447,7 +447,7 @@ $this->title = 'Страница разработки морд - 3';
 
     <div class="flex_center"> 
 
-        <div class="wt50">
+        <div class="wb50">
             
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -523,10 +523,10 @@ $this->title = 'Страница разработки морд - 3';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5 ct">№</th>
+                    <th class="wb5 ct">№</th>
                     <th>Наименование услуги</th>
-                    <th class="wt20 ct">Стоимость</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Стоимость</th>
+                    <th class="wb2 ct"></th>
 
                 </tr>
                 <tr>
@@ -609,7 +609,7 @@ $this->title = 'Страница разработки морд - 3';
                 </tr>                
                 <tr class="cur">
                     <td class="text-left">Номенклатура 1</td>
-                    <td class="ct wt10">150</td>
+                    <td class="ct wb10">150</td>
                 </tr>
                 <tr class="cur">
                     <td class="text-left">Номенклатура 2</td>
@@ -656,11 +656,11 @@ $this->title = 'Страница разработки морд - 3';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5 ct">№</th>
+                    <th class="wb5 ct">№</th>
                     <th class="ct">Наименование</th>
-                    <th class="wt20 ct">Серийный номер</th>
-                    <th class="wt10 ct">Кол-во</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Серийный номер</th>
+                    <th class="wb10 ct">Кол-во</th>
+                    <th class="wb2 ct"></th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -801,7 +801,7 @@ $this->title = 'Страница разработки морд - 3';
        
     <div class="flex_center"> 
 
-    <div class="wt70">
+    <div class="wb70">
     <div>
         <label>
              Наименование выбранного оборудовния
@@ -858,7 +858,7 @@ $this->title = 'Страница разработки морд - 3';
 <div class="panel-body">
        
     <div class="flex_center"> 
-        <div class="wt70">
+        <div class="wb70">
             <input class="form-control" type="text" placeholder="Наименование">
         </div>                        
     </div>                          
@@ -933,16 +933,16 @@ $this->title = 'Страница разработки морд - 3';
 
                 <tr class="cur">
                     <td class="text-left ">Объект 1</td>
-                    <td class="wt2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    <td class="wb2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
                 </tr>
                 
                 <tr class="cur">
                     <td class="text-left">Объект 2</td>
-                    <td class="wt2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    <td class="wb2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>
                 </tr>
                 <tr class="cur">
                     <td class="text-left">Объект 3</td>
-                    <td class="wt2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>          
+                    <td class="wb2 ct"><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>          
                 </tr>                
         </tbody>
     </table>

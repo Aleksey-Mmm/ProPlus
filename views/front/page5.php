@@ -99,7 +99,7 @@ $this->title = 'Страница разработки морд - 5';
  
 <div class="panel-body">
     <div class="flex_center"> 
-        <div class="wt70">
+        <div class="wb70">
             <div class="row">
                 <div class="col-xs-10">
                     <input class="form-control" type="text" placeholder="Текст">

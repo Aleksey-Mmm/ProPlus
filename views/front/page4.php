@@ -69,11 +69,11 @@ $this->title = 'Журнал услуг';
     <table class="table table-bordered  table-striped  table-hover  table-condensed">
         <tbody class="text-left">
                 <tr>
-                    <th class="text-center wt10">Номер</th>
-                    <th class="text-center wt10">Дата</th>
+                    <th class="text-center wb10">Номер</th>
+                    <th class="text-center wb10">Дата</th>
                     <th class="text-center">Организация</th>
-                    <th class="text-center wt15">Исполнитель</th>
-                    <th class="text-center wt5"></th>
+                    <th class="text-center wb15">Исполнитель</th>
+                    <th class="text-center wb5"></th>
 
                 </tr>
                

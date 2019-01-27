@@ -32,7 +32,7 @@ $this->title = 'Редактор бланка';
  
 <div class="panel-body">
     <div class="flex_center"> 
-    <div class="wt80">
+    <div class="wb80">
 
 <div class="checkbox lt">
     <label><input type="checkbox">Доступна для выбора</label>

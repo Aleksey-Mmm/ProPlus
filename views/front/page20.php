@@ -32,7 +32,7 @@ $this->title = 'Учетная запись';
 
 <div class="panel-body">
     <div class="flex_center"> 
-        <div class="wt60 lt">
+        <div class="wb60 lt">
 
     <div class="form-group">
         <label>Логин:</label>

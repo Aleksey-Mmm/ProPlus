@@ -44,8 +44,8 @@ $this->title = 'Выбор клиента';
         <tbody class="text-left">
                 <tr>
                     <th class="ct">ФИО</th>
-                    <th class="wt20 ct">Телефон</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Телефон</th>
+                    <th class="wb2 ct"></th>
 
                 </tr>
                 <tr class="cur">

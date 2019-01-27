@@ -29,7 +29,7 @@ $this->title = 'Редактор';
  
 <div class="panel-body">
     <div class="flex_center"> 
-        <div class="wt70">
+        <div class="wb70">
 
     <select class="form-control">
         <option value="">Список каталога</option>

@@ -80,7 +80,7 @@ $this->title = 'Кабинет';
 
                 </tr>
                 <tr>
-                    <td class="lt wt30">Краткое наименование</td>
+                    <td class="lt wb30">Краткое наименование</td>
                     <td class="lt">Педприятие 1 ООО</td>
                 </tr>
                 <tr>
@@ -168,7 +168,7 @@ $this->title = 'Кабинет';
 
                 </tr>
                 <tr>
-                    <td class="lt wt30">Наименование банка</td>
+                    <td class="lt wb30">Наименование банка</td>
                     <td class="lt">ВТБ в г. Уськут</td>
                 </tr>
                 <tr>

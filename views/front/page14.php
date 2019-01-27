@@ -71,7 +71,7 @@ $this->title = 'Справочник Услуг';
                 </tr>                
                 <tr class="cur">
                     <td class="text-left">Номенклатура 1</td>
-                    <td class="ct wt10">150</td>
+                    <td class="ct wb10">150</td>
                 </tr>
                 <tr class="cur">
                     <td class="text-left">Номенклатура 2</td>

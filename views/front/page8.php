@@ -46,7 +46,7 @@ $this->title = 'Редактор';
 
     <div class="flex_center"> 
 
-        <div class="wt50">
+        <div class="wb50">
             
                     <div class="input-group" title="Фамилия">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
