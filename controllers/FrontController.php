@@ -122,6 +122,30 @@ class FrontController extends Controller
     {
         return $this->render("page25");
     }
+        public function actionPage26()
+    {
+        return $this->render("page26");
+    }
+        public function actionPage27()
+    {
+        return $this->render("page27");
+    }
+        public function actionPage28()
+    {
+        return $this->render("page28");
+    }
+        public function actionPage29()
+    {
+        return $this->render("page29");
+    }
+        public function actionPage30()
+    {
+        return $this->render("page30");
+    }
+
+
+
+
     
     
 

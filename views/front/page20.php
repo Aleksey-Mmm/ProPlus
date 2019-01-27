@@ -22,7 +22,7 @@ $this->title = 'Учетная запись';
   
         <div class="btn-group">
            
-            <a href="<?= Url::to(['front/page17']); ?>" class="btn btn-sm btn-default">Сохранить</a>
+            <a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">Сохранить</a>
             <a href="<?= Url::to(['front/page17']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>   
         </div>
   </div>
@@ -73,6 +73,29 @@ $this->title = 'Учетная запись';
    
 </div>
 <!-- /Панель редактор -->
+<!-- Модальгное окно 1 -->
 
+    <div id="myModal1" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header alert alert-danger ">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Внимание!</h4>
+                </div>
+                <div class="modal-body">
+
+Все изменения учетной записи будут сохранены.  
+                   Продолжить?
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                    <a href="<?= Url::to(['front/page17']); ?>" class="btn btn-sm btn-default">Сохранить</a>
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /Модальгное окно 1 -->
 
 </div>

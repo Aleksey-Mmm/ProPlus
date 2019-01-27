@@ -41,8 +41,8 @@ $this->title = 'Сотрудник';
 <div class="panel-body">
 
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="<?= Url::to(['front/page26']); ?>">Логин</a></li>
+        <li><a href="<?= Url::to(['front/page24']); ?>">Профиль</a></li>
+        <li class="active"><a href="#">Логин</a></li>
         <li><a href="<?= Url::to(['front/page25']); ?>">Права</a></li>
         <li><a href="<?= Url::to(['front/page27']); ?>">Служебное</a></li>
     </ul>
@@ -51,56 +51,49 @@ $this->title = 'Сотрудник';
 
     <div class="flex_center"> 
 
-        <div class="wb50">
-            
-                    <div class="input-group" title="Фамилия">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" placeholder="Фамилия">
-                    </div> 
-<br>
-                    <div class="input-group" title="Имя">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" placeholder="Имя">
-                    </div> 
-<br>
-                    <div class="input-group" title="Отчество">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" placeholder="Отчество">
-                    </div> 
-<br>
-                    <div class="input-group" title="Телефлон">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
-                        <input type="text" class="form-control" placeholder="Телефон">
-                    </div> 
-<br>
-                   
-                    <div class="input-group" title="e-mail">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input type="text" class="form-control" placeholder="е-mail">
-                    </div> 
-<br>
+        <div class="wb50 lt">
+        
+    <div class="form-group">
+        <label>Логин:</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span title="Префикс">Тут префикс</span></div>
+            <input type="password" placeholder="Логин" class="form-control">
 
-                    <div class="input-group" title="День рождения">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-gift"></span></span>
-                        <input class="form-control" type="date" placeholder=""  id="example-date-input">
-                    </div> 
-<br>
+        </div>
+    </div>
 
-                    <div class="input-group" title="Пол">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-tree-deciduous"></span></span>
-                    <select class="form-control">
-                        <option value="">Пол</option>
-                        <option value="">Мужской</option>
-                        <option value="">Женский</option>
-                    </select>
-                    </div> 
-<br>            
+    <div class="form-group">
+        <label>e-mail:</label>
+        <input class="form-control" type="text" placeholder="e-mail">
+    </div>
 
-<br>
+
+    <div class="form-group">
+        <label>Введите новый пароль:</label>
+        <div class="input-group">
+            <input type="password" placeholder="Пароль" class="form-control">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-eye-open" title="Показать пароль"></span></div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>Повторить пароль</label>
+        
+        <div class="input-group">
+            <input type="password" placeholder="Повторить пароль" class="form-control">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-eye-open" title="Показать пароль"></span></div>
+        </div>
+
+    </div>
+<button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Копировать в буфер</button>
+
+<br><br>
+
             
                     <div class="input-group" title="Дополнительная информация">
-                        при переходе на страницу  если были изменения запросить подтверждение на изменение.
-<a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">окно</a>
+                        при переходе на страницу  если были изменения запросить подтверждение на изменение. 
+                        <a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">Окно</a>
                     </div> 
 <br>     
             
@@ -115,7 +108,7 @@ $this->title = 'Сотрудник';
     <div id="myModal1" class="modal fade">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header alert alert-danger">
+                <div class="modal-header alert alert-danger ">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Внимание!</h4>
                 </div>
@@ -127,7 +120,7 @@ $this->title = 'Сотрудник';
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Сохранить</button>
+                    <a href="#" class="btn btn-sm btn-default">Сохранить</a>
                     <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
                 </div>
             </div>
@@ -158,4 +151,3 @@ $this->title = 'Сотрудник';
 <!-- /Модальгное окно 2 -->
 
 </div>
-

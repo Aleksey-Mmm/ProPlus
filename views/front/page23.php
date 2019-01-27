@@ -8,7 +8,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
-$this->title = 'Страница разработки морд - 4';
+$this->title = 'Справочники';
 
 ?>
 <div class="jumbotron">
@@ -36,7 +36,7 @@ $this->title = 'Страница разработки морд - 4';
         </div>
         <a href="<?= Url::to(['front/page6']); ?>" class="list-group-item lt">Организации</a>
         <a href="<?= Url::to(['front/page7']); ?>" class="list-group-item lt">Частные лица</a>
-
+        <a href="#" class="list-group-item lt">Сотрудники</a>
         <a href="<?= Url::to(['front/page14']); ?>" class="list-group-item lt">Услуги</a>
         <a href="<?= Url::to(['front/page15']); ?>" class="list-group-item lt">Оборудование</a>
         <a href="#" class="list-group-item lt">Склад</a>
