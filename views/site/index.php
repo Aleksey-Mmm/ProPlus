@@ -25,7 +25,7 @@ $this->title = 'Сервис';
     </div>
     
     <div class="row">
-        <a href="<?= Url::to(['front/page10']); ?>">
+        <a href="<?= Url::to(['/nastrbl']); ?>">
         <div class="alert alert-success cur shadow col-xs-5">
             <i class="glyphicon glyphicon-list gi-4x"> </i> <br> Конструктор бланков 
         </div>
