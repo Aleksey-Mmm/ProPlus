@@ -58,6 +58,9 @@ $this->title = 'Редактор бланка';
 <div class="checkbox lt">
     <label><input type="checkbox">Справочник частных лиц</label>
 </div>
+<div class="checkbox lt">
+    <label><input type="checkbox">Календарь</label>
+</div>
 
 <div class="checkbox lt">
     <label><input type="checkbox">Оказание услуг</label>

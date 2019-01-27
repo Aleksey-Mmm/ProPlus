@@ -18,12 +18,23 @@ $this->title = 'Справочник оборудования';
   <div class="panel-heading">
 <div class="flex_left">
     <div class="f-auto" >
-        <b>Справочник оборудования</b> 
+        <b>Справочник</b> 
     </div> 
   
-       <div class="btn-group">
+    <div class="btn-group">
+        <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+            Добавить
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="<?= Url::to(['front/page22']); ?>">Папка</a></li>
+            <li class="divider"></li>
+            <li><a href="<?= Url::to(['front/page22']); ?>">Оборудование</a></li>
+        </ul>
+        </div>
         <a href="<?= Url::to(['front/page1']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
-     </div>
+    </div>
      
   </div>
   

@@ -447,7 +447,7 @@ $this->title = 'Страница разработки морд - 3';
 
     <div class="flex_center"> 
 
-        <div class="bl2">
+        <div class="wt50">
             
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -801,7 +801,7 @@ $this->title = 'Страница разработки морд - 3';
        
     <div class="flex_center"> 
 
-    <div class="bl70">
+    <div class="wt70">
     <div>
         <label>
              Наименование выбранного оборудовния
@@ -858,7 +858,7 @@ $this->title = 'Страница разработки морд - 3';
 <div class="panel-body">
        
     <div class="flex_center"> 
-        <div class="bl70">
+        <div class="wt70">
             <input class="form-control" type="text" placeholder="Наименование">
         </div>                        
     </div>                          

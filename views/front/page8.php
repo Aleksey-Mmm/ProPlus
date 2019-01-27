@@ -46,42 +46,42 @@ $this->title = 'Редактор';
 
     <div class="flex_center"> 
 
-        <div class="bl2">
+        <div class="wt50">
             
-                    <div class="input-group">
+                    <div class="input-group" title="Фамилия">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                         <input type="text" class="form-control" placeholder="Фамилия">
                     </div> 
 <br>
-                    <div class="input-group">
+                    <div class="input-group" title="Имя">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                         <input type="text" class="form-control" placeholder="Имя">
                     </div> 
 <br>
-                    <div class="input-group">
+                    <div class="input-group" title="Отчество">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                         <input type="text" class="form-control" placeholder="Отчество">
                     </div> 
 <br>
-                    <div class="input-group">
+                    <div class="input-group" title="Телефлон">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
                         <input type="text" class="form-control" placeholder="Телефон">
                     </div> 
 <br>
                    
-                    <div class="input-group">
+                    <div class="input-group" title="e-mail">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input type="text" class="form-control" placeholder="еmail">
+                        <input type="text" class="form-control" placeholder="е-mail">
                     </div> 
 <br>
 
-                    <div class="input-group">
+                    <div class="input-group" title="День рождения">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-gift"></span></span>
                         <input class="form-control" type="date" placeholder=""  id="example-date-input">
                     </div> 
 <br>
 
-                    <div class="input-group">
+                    <div class="input-group" title="Пол">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-tree-deciduous"></span></span>
                     <select class="form-control">
                         <option value="">Пол</option>
@@ -91,7 +91,7 @@ $this->title = 'Редактор';
                     </div> 
 <br>            
 
-                    <div class="input-group">
+                    <div class="input-group" title="Дополнительная информация">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
                         <textarea class="form-control" rows="2" placeholder="Дополнительная информация"></textarea>
                     </div> 

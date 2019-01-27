@@ -98,7 +98,7 @@ $this->title = 'Выбор организации';
                 </div>
                 <div class="modal-body">
 
-<!-- Панель к. лицо после выбора -->
+<!-- Панель Реквизиты -->
 <div class="panel panel-success">
   <div class="panel-heading">
 <div class="flex_left">

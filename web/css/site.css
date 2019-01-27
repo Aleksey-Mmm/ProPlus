@@ -95,6 +95,18 @@
 {
     width: 30%;
 }
+.wt50
+{
+    width: 50%;
+}
+.wt60
+{
+    width: 60%;
+}
+.wt70
+{
+    width: 70%;
+}
 .wt80
 {
     width: 80%;
@@ -114,14 +126,6 @@
 .cur
 {
     cursor: pointer;
-}
-.bl70
-{
-    width: 70%;
-}
-.bl2
-{
-    width: 50%;
 }
 
 .shadow
