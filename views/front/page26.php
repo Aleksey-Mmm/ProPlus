@@ -33,7 +33,7 @@ $this->title = 'Сотрудник';
                 </ul>
         </div>           
 
-            <a href="#" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>   
+            <a href="<?= Url::to(['front/page21']);?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>   
         </div>
   </div>
 </div>

@@ -29,7 +29,7 @@ $this->title = 'Сотрудники';
         <ul class="dropdown-menu">
             <li><a href="<?= Url::to(['front/page22']); ?>">Отдел</a></li>
             <li class="divider"></li>
-            <li><a href="#">Сотрудник</a></li>
+            <li><a href="<?= Url::to(['front/page24']); ?>">Сотрудник</a></li>
         </ul>
         </div>
         <a href="<?= Url::to(['./']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
