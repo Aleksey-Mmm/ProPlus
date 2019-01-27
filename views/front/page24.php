@@ -8,7 +8,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
-$this->title = 'Редактор';
+$this->title = 'Сотрудник';
 
 ?>
 <div class="jumbotron">
@@ -21,27 +21,32 @@ $this->title = 'Редактор';
         </div> 
   
         <div class="btn-group">
-           
         <div class="btn-group">
             <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-                Сохранить <span class="caret"></span>
+            Сохранить
+            <span class="caret"></span>
             </button>
                 <ul class="dropdown-menu">
-                    <li><a href="<?= Url::to(['front/page7']);?>">Сохранить</a></li>
+                    <li><a href="#myModal2" data-toggle="modal">Сохранить</a></li>
                     <li class="divider"></li>
-                    <li><a href="<?= Url::to(['front/page1']);?>">Сохранить и выбрать</a></li>
+                    <li><a href="<?= Url::to(['front/page21']);?>">Сохранить и закрыть</a></li>
                 </ul>
-         </div>
-            <a href="<?= Url::to(['front/page7']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-saved"></span></a>
-            <a href="<?= Url::to(['front/page7']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>   
+        </div>           
+
+            <a href="<?= Url::to(['front/page21']);?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>   
         </div>
   </div>
 </div>
  
 <div class="panel-body">
 
-
-
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">Профиль</a></li>
+        <li><a href="<?= Url::to(['front/page26']); ?>">Логин</a></li>
+        <li><a href="<?= Url::to(['front/page25']); ?>">Права</a></li>
+        <li><a href="<?= Url::to(['front/page27']); ?>">Служебное</a></li>
+    </ul>
+<br>
 
 
     <div class="flex_center"> 
@@ -91,12 +96,13 @@ $this->title = 'Редактор';
                     </div> 
 <br>            
 
+<br>
+            
                     <div class="input-group" title="Дополнительная информация">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
-                        <textarea class="form-control" rows="2" placeholder="Дополнительная информация"></textarea>
+                        при переходе на страницу  если были изменения запросить подтверждение на изменение.
+<a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">окно</a>
                     </div> 
-<br>            
-  
+<br>     
             
 
             </div>                        
@@ -104,4 +110,52 @@ $this->title = 'Редактор';
 </div>   
 </div>
 <!-- /Панель редактор к. лицо --> 
+<!-- Модальгное окно 1 -->
+
+    <div id="myModal1" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header alert alert-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Внимание!</h4>
+                </div>
+                <div class="modal-body">
+
+Все изменения учетной записи будут сохранены.  
+                   Продолжить?
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Сохранить</button>
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /Модальгное окно 1 -->
+<!-- Модальгное окно 2 -->
+
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header alert alert-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Внимание!</h4>
+                </div>
+                <div class="modal-body">
+
+Изменения сохранены!
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /Модальгное окно 2 -->
+
 </div>
+

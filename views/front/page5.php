@@ -99,7 +99,7 @@ $this->title = 'Страница разработки морд - 5';
  
 <div class="panel-body">
     <div class="flex_center"> 
-        <div class="bl70">
+        <div class="wb70">
             <div class="row">
                 <div class="col-xs-10">
                     <input class="form-control" type="text" placeholder="Текст">
@@ -108,6 +108,13 @@ $this->title = 'Страница разработки морд - 5';
                     <input class="form-control ct" type="text" placeholder="текст">
                 </div>
             </div>
+    <br>
+    <select class="form-control">
+        <option value="">Все услуги</option>
+        <option value="">Русский</option>
+        <option value="">Английский</option>
+        <option value="">Французский</option>
+    </select>  
     <br>
     <input class="form-control" type="text" placeholder="Текст">
     <br> 

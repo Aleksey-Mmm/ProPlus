@@ -135,7 +135,7 @@ $this->title = 'Страница разработки морд - 1';
         <tbody class="text-left">
                 <tr>
                     <th class="ct">Ф.И.О</th>
-                    <th class="wt20 ct">Телефон</th>
+                    <th class="wb20 ct">Телефон</th>
 
                 </tr>
                 <tr>
@@ -187,7 +187,7 @@ $this->title = 'Страница разработки морд - 1';
         <tbody class="text-left">
                 <tr>
                     <th class="ct">Ф.И.О</th>
-                    <th class="wt20 ct">Телефон</th>
+                    <th class="wb20 ct">Телефон</th>
 
                 </tr>
                 <tr>
@@ -225,10 +225,10 @@ $this->title = 'Страница разработки морд - 1';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5 ct">№</th>
+                    <th class="wb5 ct">№</th>
                     <th>Наименование услуги</th>
-                    <th class="wt20 ct">Стоимость</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Стоимость</th>
+                    <th class="wb2 ct"></th>
 
                 </tr>
                 <tr>
@@ -284,11 +284,11 @@ $this->title = 'Страница разработки морд - 1';
     <table class="table table-bordered   table-hover table-condensed">
             <tbody>
                 <tr>
-                    <th class="wt5 ct">№</th>
+                    <th class="wb5 ct">№</th>
                     <th class="ct">Наименование</th>
-                    <th class="wt20 ct">Серийный номер</th>
-                    <th class="wt10 ct">Кол-во</th>
-                    <th class="wt2 ct"></th>
+                    <th class="wb20 ct">Серийный номер</th>
+                    <th class="wb10 ct">Кол-во</th>
+                    <th class="wb2 ct"></th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -463,7 +463,7 @@ $this->title = 'Страница разработки морд - 1';
                 <div class="modal-body">
 
     <div class="flex_center"> 
-        <div class="wt80">
+        <div class="wb80">
 <label> Наименование выбранной номенклатуры</label>
 <br>
 <br>

@@ -49,7 +49,7 @@ $this->title = 'Выбор организации';
                 </tr>
                 <tr class="cur">
                     <td class="text-left">Организация 1</td>
-                    <td class="text-left wt2 ct">
+                    <td class="text-left wb2 ct">
                         <a href="#myModal1" class="btn btn-xs btn-default" data-toggle="modal"><span class="glyphicon glyphicon-search"></span></a>
                     </td>
 
@@ -98,7 +98,7 @@ $this->title = 'Выбор организации';
                 </div>
                 <div class="modal-body">
 
-<!-- Панель к. лицо после выбора -->
+<!-- Панель Реквизиты -->
 <div class="panel panel-success">
   <div class="panel-heading">
 <div class="flex_left">
@@ -125,7 +125,7 @@ $this->title = 'Выбор организации';
 
                 </tr>
                 <tr>
-                    <td class="lt wt30">Краткое наименование</td>
+                    <td class="lt wb30">Краткое наименование</td>
                     <td class="lt">Педприятие 1 ООО</td>
                 </tr>
                 <tr>

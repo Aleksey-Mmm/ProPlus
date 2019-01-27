@@ -8,74 +8,70 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
-$this->title = 'Справочник Услуг';
+$this->title = 'Сотрудники';
 
 ?>
 <div class="jumbotron">
-
-<!-- Панель Выбор Услуги -->
+<!-- Панель Выбор оборудования -->
 <div class="panel panel-success">
   <div class="panel-heading">
-<div class="flex_left">
+    <div class="flex_left">
     <div class="f-auto" >
         <b>Справочник</b> 
     </div> 
   
-        <div class="btn-group">
+    <div class="btn-group">
         <div class="btn-group">
         <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
             Добавить
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-            <li><a href="<?= Url::to(['front/page22']); ?>">Папка</a></li>
+            <li><a href="<?= Url::to(['front/page22']); ?>">Отдел</a></li>
             <li class="divider"></li>
-            <li><a href="<?= Url::to(['front/page22']); ?>">Услуга</a></li>
+            <li><a href="<?= Url::to(['front/page24']); ?>">Сотрудник</a></li>
         </ul>
         </div>
-        <a href="<?= Url::to(['front/page1']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
-        </div>
+        <a href="<?= Url::to(['./']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
+     </div>
      
-  </div>
+    </div>
   
-  </div>
-  <div class="panel-body">
+    </div>
+    <div class="panel-body">
     
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Введите наименование">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Найти</button>
-        </span>
-    </div>        
-                   
-  </div>
-  <div class="panel-body">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Введите наименование">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Найти</button>
+            </span>
+        </div>        
+    </div>
+    <div class="panel-body">
   
      
     <table class="table table-bordered  table-striped  table-hover  table-condensed ">
         <tbody class="text-left">
                 <tr>
-                    <th colspan="2" class="text-center">Услуги</th>
+                    <th colspan="2" class="text-center">Сотрудники</th>
 
                 </tr>
                 <tr class="cur">
-                    <td colspan="2" class="text-left "><b>...    (на 1 уравень )</b></td>
+                    <td class="text-left "><b>...    (на 1 уравень )</b></td>
 
                 </tr>
                 
                 <tr class="cur">
-                    <td colspan="2" class="text-left"><b>Каталог 1 Уровень2</b></td>
+                    <td class="text-left"><b>Отдел 1 Уровень2</b></td>
                 </tr>
                 <tr class="cur">
-                    <td colspan="2" class="text-left"><b>Каталог 2 Уровень2</b></td>
+                    <td class="text-left"><b>Отдел 2 Уровень2</b></td>
                 </tr>                
                 <tr class="cur">
-                    <td class="text-left">Номенклатура 1</td>
-                    <td class="ct wb10">150</td>
+                    <td class="text-left">Иванов Василий Петрович</td>
                 </tr>
                 <tr class="cur">
-                    <td class="text-left">Номенклатура 2</td>
-                    <td class="ct">150</td>
+                    <td class="text-left">Саратов Гаврил семенович</td>
                 </tr>                                 
         </tbody>
     </table>
@@ -93,10 +89,10 @@ $this->title = 'Справочник Услуг';
         <li><a href="#">&raquo;</a></li>
     </ul>
 <div>
-Тут навигация по каталогам   
+Тут  навигация по каталогам   
 </div>
 </div>
 
-<!-- /Панель Выбор услуги-->       
+<!-- /Панель Выбор оборудования--> 
 
 </div>

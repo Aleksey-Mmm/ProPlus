@@ -71,35 +71,47 @@
 }
 
 /* Таблицы ширина столбца*/
-.wt2
+.wb2
 {
     width: 2%;
 }
-.wt5
+.wb5
 {
     width: 5%;
 }
-.wt10
+.wb10
 {
     width: 10%;
 }
-.wt15
+.wb15
 {
     width: 15%;
 }
-.wt20
+.wb20
 {
     width: 20%;
 }
-.wt30
+.wb30
 {
     width: 30%;
 }
-.wt80
+.wb50
+{
+    width: 50%;
+}
+.wb60
+{
+    width: 60%;
+}
+.wb70
+{
+    width: 70%;
+}
+.wb80
 {
     width: 80%;
 }
-.wt100
+.wb100
 {
     width: 100%;
 }
@@ -114,14 +126,6 @@
 .cur
 {
     cursor: pointer;
-}
-.bl70
-{
-    width: 70%;
-}
-.bl2
-{
-    width: 50%;
 }
 
 .shadow
