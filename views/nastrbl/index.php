@@ -8,7 +8,12 @@
 
 
 /* @var $this yii\web\View */
+/* @var $model app\models\blank\NastrBlank */
+/* @var $uslugi[] app\models\blank\NastrBlank */
+
+use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
+
 $this->title = 'Услуги';
 
 ?>
@@ -17,13 +22,15 @@ $this->title = 'Услуги';
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="flex_left">
-                <div class="f-auto" >
+                <div class="f-auto">
                     <b>Услуги</b>
                 </div>
 
                 <div class="btn-group">
-                    <a href="#myModal1" class="btn btn-sm btn-default" data-toggle="modal">Добавить</a>
-                    <a href="<?= Url::to(['./']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
+                    <a href="<?= Url::to(['nastrbl/add#myModal1']); ?>" class="btn btn-sm btn-default"
+                       data-toggle="modal">Добавить</a>
+                    <a href="<?= Url::to(['./']); ?>" class="btn btn-sm btn-default"><span
+                                class="glyphicon glyphicon-unchecked"></span></a>
                 </div>
 
             </div>
@@ -32,9 +39,19 @@ $this->title = 'Услуги';
 
         <div class="panel-body">
 
-
+<?= $model->predpr_id ?>
             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                 <tbody class="text-left">
+                <?php
+                foreach ($uslugi as $usluga):
+                ?>
+                <tr class="cur">
+                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'"><?= /** @var \app\models\blank\NastrBlank $usluga */
+                        \yii\helpers\Html::encode($usluga->name); ?></td>
+                </tr>
+                <?php
+                endforeach;
+                ?>
 
                 <tr class="cur">
                     <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'">Услуга 1</td>
@@ -69,25 +86,44 @@ $this->title = 'Услуги';
                 <div class="modal-body">
 
                     <!-- Панель после выбора -->
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <div class="flex_left">
-                                <div class="f-auto" >
-                                    <b>Наименование услуги</b>
-                                </div>
 
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Сохранить</button>
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
-                                </div>
+                    <?php
+                    //<div class="panel panel-success">
+                    $form = ActiveForm::begin([
+                        'options' => [
+                            'class' => 'panel panel-success',
+                        ],
+                        'action' => 'nastrbl/add',
+                    ])
+                    ?>
+                    <div class="panel-heading">
+                        <div class="flex_left">
+                            <div class="f-auto">
+                                <b>Наименование услуги</b>
                             </div>
 
-                        </div>
-                        <div class="panel-body">
-                            <input class="form-control" type="text" placeholder="Наименование услуги">
+                            <div class="btn-group">
+                                <?= \yii\helpers\Html::button('Сохранить', [
+                                    'type' => 'submit',
+                                    'class' => 'btn btn-sm btn-default',
+                                ]);
+                                //<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Сохранить</button>
+                                ?>
+                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span
+                                            class="glyphicon glyphicon-unchecked"></span></button>
+                            </div>
                         </div>
 
                     </div>
+                    <div class="panel-body">
+                        <?= $form->field($model, 'name')->textInput(['class' => 'form-control'])->label(false);
+                        //<input class="form-control" type="text" placeholder="Наименование услуги">
+                        ?>
+                    </div>
+                    <?php
+                    $form::end();
+                    //</div>
+                    ?>
                 </div>
             </div>
         </div>
