@@ -15,6 +15,7 @@ use app\models\blank\NastrBlank;
 use app\models\sotrudnik\Sotrudnik;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 
 class NastrblController extends Controller
 {
@@ -27,7 +28,7 @@ class NastrblController extends Controller
                 //'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'add'],
+                        'actions' => ['index', 'add', 'edit'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -61,6 +62,38 @@ class NastrblController extends Controller
         //return $this->render('index', compact('model'));
         return $this->redirect(['nastrbl/index']);
 
+    }
+
+    /**
+     * редактирование настройки бланка
+     *
+     * @param int $nid  ид бланка
+     * @return string|\yii\web\Response
+     * @throws ForbiddenHttpException
+     */
+    public function actionEdit($nid = 0)
+    {
+        if ($nid == 0) { //сюда не может прийти 0. Какой то косяк, скидываем юзера.
+            \Yii::$app->user->logout();
+            return $this->goHome();
+        }
+
+        $predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id;
+        $model = NastrBlank::findOne(['id'=>$nid, 'predpr_id'=>$predpr_id]);
+        if (!$model) {
+            throw new ForbiddenHttpException('Ошибка редактирования настройки бланка!');
+        }
+
+        if ($model->load(\Yii::$app->request->post())) {
+            if (empty($model->dirtyAttributes)) {
+                \Yii::$app->session->setFlash('success', 'Изменений нет');
+            } else {
+                \Yii::$app->session->setFlash('warning', 'Есть изменения!');
+            }
+            return $this->redirect(['nastrbl/index']);
+        }
+
+        return $this->render('edit', compact('model'));
     }
 
 

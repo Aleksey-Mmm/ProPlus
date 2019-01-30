@@ -44,16 +44,14 @@ $this->title = 'Услуги';
             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                 <tbody class="text-left">
                 <?php
-                if ($uslugi):
                 foreach ($uslugi as $usluga):
                 ?>
                 <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'"><?= /** @var \app\models\blank\NastrBlank $usluga */
+                    <td class="text-left" onClick="document.location='<?=/** @var \app\models\blank\NastrBlank $usluga */ Url::to(['nastrbl/edit', 'nid'=>$usluga->id]); ?>'"><?=
                         Html::encode($usluga->name); ?></td>
                 </tr>
                 <?php
                 endforeach;
-                endif;
                 ?>
 
                 <tr class="cur">
