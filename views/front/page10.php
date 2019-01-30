@@ -12,6 +12,8 @@ $this->title = 'Услуги';
 
 ?>
 <div class="jumbotron">
+
+   <p>отработано</p>
 <!-- Панель Выбора Услуги -->
 <div class="panel panel-default">
   <div class="panel-heading">

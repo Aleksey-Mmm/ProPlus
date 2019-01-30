@@ -12,6 +12,7 @@
 /* @var $uslugi[] app\models\blank\NastrBlank */
 
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = 'Услуги';
@@ -46,8 +47,8 @@ $this->title = 'Услуги';
                 foreach ($uslugi as $usluga):
                 ?>
                 <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'"><?= /** @var \app\models\blank\NastrBlank $usluga */
-                        \yii\helpers\Html::encode($usluga->name); ?></td>
+                    <td class="text-left" onClick="document.location='<?=/** @var \app\models\blank\NastrBlank $usluga */ Url::to(['nastrbl/edit', 'nid'=>$usluga->id]); ?>'"><?=
+                        Html::encode($usluga->name); ?></td>
                 </tr>
                 <?php
                 endforeach;
@@ -103,7 +104,7 @@ $this->title = 'Услуги';
                             </div>
 
                             <div class="btn-group">
-                                <?= \yii\helpers\Html::button('Сохранить', [
+                                <?= Html::button('Сохранить', [
                                     'type' => 'submit',
                                     'class' => 'btn btn-sm btn-default',
                                 ]);
