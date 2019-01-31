@@ -14,6 +14,7 @@ namespace app\controllers;
 use app\models\blank\NastrBlank;
 use app\models\sotrudnik\Sotrudnik;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 
@@ -59,6 +60,7 @@ class NastrblController extends Controller
                 \Yii::$app->session->setFlash('error', 'Ошибка добавления новой записи!');
             }
         }
+
         //return $this->render('index', compact('model'));
         return $this->redirect(['nastrbl/index']);
 
@@ -85,11 +87,19 @@ class NastrblController extends Controller
         }
 
         if ($model->load(\Yii::$app->request->post())) {
-            if (empty($model->dirtyAttributes)) {
-                \Yii::$app->session->setFlash('success', 'Изменений нет');
+            //var_dump(\Yii::$app->request->post());
+            if (ArrayHelper::keyExists('default', \Yii::$app->request->post())) {
+                //echo "Eeeeeeee"; бланк назначен по умолчанию. TODO: прописать в предприятии.
             } else {
-                \Yii::$app->session->setFlash('warning', 'Есть изменения!');
+                //echo "Nooooooo";
             }
+//            if (empty($model->dirtyAttributes)) {
+//                \Yii::$app->session->setFlash('success', 'Изменений нет');
+//
+//            } else {
+//                \Yii::$app->session->setFlash('warning', 'Есть изменения!');
+//                var_dump($model->dirtyAttributes);
+//            }
             return $this->redirect(['nastrbl/index']);
         }
 

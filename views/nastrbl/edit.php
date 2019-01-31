@@ -54,66 +54,104 @@ $this->title = 'Редактор бланка';
         <div class="panel-body">
             <div class="flex_center">
                 <div class="wb80">
-
                     <div class="checkbox lt">
-                        <label><input type="checkbox">Доступна для выбора</label>
+                        <?= $form->field($model, 'ch_enable')->checkbox([
+                                'label' => 'Доступна для выбора',
+                        ]);
+                        //<label><input type="checkbox">Доступна для выбора</label>
+                        ?>
                     </div>
                     <div class="checkbox lt">
-                        <label><input type="checkbox">Бланк по умолчанию</label>
+                        <label><input type="checkbox" name="default" value="1">Бланк по умолчанию</label>
                     </div>
+                    <?= $form->field($model, 'name')
+                        ->textInput(['class' => 'form-control', 'placeholder'=>'Наименование услуги'])
+                        ->label(false);
+                    //<input class="form-control" type="text" placeholder="Наименование услуги"><br>
+                    ?>
 
-
-                    <input class="form-control" type="text" placeholder="Наименование услуги">
-                    <br>
                     <div class="row">
                         <div class="col-xs-5">
-                            <input class="form-control" type="text" placeholder="Префикс для нумерации бланка" maxlength="4">
+                            <?= $form->field($model, 'prefix')
+                                ->textInput(['class' => 'form-control', 'placeholder'=>'Префикс для нумерации бланка'])
+                                ->label(false);
+                            //<input class="form-control" type="text" placeholder="Префикс для нумерации бланка" maxlength="4">
+                            ?>
                         </div>
                     </div>
                     <br>
 
                     <div class="checkbox lt">
-                        <label><input type="checkbox">Справочник организаций</label>
+                        <?= $form->field($model, 'ch_sprav_org')->checkbox([
+                            'label' => 'Справочник организаций',
+                        ]);
+                        //<label><input type="checkbox">Справочник организаций</label>
+                        ?>
+                    </div>
+                    <div class="checkbox lt">
+                        <?= $form->field($model, 'ch_sprav_chast')->checkbox([
+                            'label' => 'Справочник частных лиц',
+                        ]);
+                        // <label><input type="checkbox">Справочник частных лиц</label>
+                        ?>
+                    </div>
+                    <div class="checkbox lt">
+                        <?= $form->field($model, 'ch_calendar')->checkbox([
+                            'label' => 'Календарь',
+                        ]);
+                        // <label><input type="checkbox">Календарь</label>
+                        ?>
+                    </div>
+                    <div class="checkbox lt">
+                        <?= $form->field($model, 'ch_okaz_uslug')->checkbox([
+                            'label' => 'Оказание услуг',
+                        ]);
+                        //<label><input type="checkbox">Оказание услуг</label>
+                        ?>
+                    </div>
+                    <div class="checkbox lt">
+                        <?= $form->field($model, 'ch_obsl_oborud')->checkbox([
+                            'label' => 'Обслуживание оборудования',
+                        ]);
+                        //<input type="checkbox">Обслуживание оборудования</label>
+                        ?>
                     </div>
 
                     <div class="checkbox lt">
-                        <label><input type="checkbox">Справочник частных лиц</label>
-                    </div>
-                    <div class="checkbox lt">
-                        <label><input type="checkbox">Календарь</label>
-                    </div>
-
-                    <div class="checkbox lt">
-                        <label><input type="checkbox">Оказание услуг</label>
+                        <?= $form->field($model, 'ch_sn_in_blank')->checkbox([
+                            'label' => 'Серийный номер оборудования равен номеру бланка',
+                        ]);
+                        //<label><input type="checkbox">Серийный номер оборудования равен номеру бланка</label>
+                        ?>
                     </div>
 
                     <div class="checkbox lt">
-                        <label><input type="checkbox">Обслуживание оборудования</label>
+                        <?= $form->field($model, 'ch_ispoln')->checkbox([
+                            'label' => 'Назначать исполнителя',
+                        ]);
+                        //<label><input type="checkbox">Назначать исполнителя</label>
+                        ?>
                     </div>
-
-                    <div class="checkbox lt">
-                        <label><input type="checkbox">Серийный номер оборудования равен номеру бланка</label>
-                    </div>
-
-                    <div class="checkbox lt">
-                        <label><input type="checkbox">Назначать исполнителя</label>
-                    </div>
-
-
 
                     <!-- Панель Дополнительные поля -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="flex_left">
-
                                 <div>
-
-                                    <input type="checkbox">
-
+                                    <?= $form->field($model, 'ch_comment')->checkbox([
+                                        'label' => '',
+                                    ]);
+                                    //<input type="checkbox">
+                                    ?>
                                 </div>
-
+                                <?= $form->field($model, 'comment_name')
+                                    ->hiddenInput(['id'=>'comNameHide'])
+                                    ->label(false);
+                                //<input class="form-control" type="text" placeholder="Префикс для нумерации бланка" maxlength="4">
+                                ?>
                                 <div id="comName" class="f-auto" >
-                                    <b>Комментарий клиента</b>
+
+                                    <b><?= Html::encode($model->comment_name); ?></b>
                                 </div>
 
                                 <div class="btn-group">
@@ -134,13 +172,15 @@ $this->title = 'Редактор бланка';
                             <div class="flex_left">
 
                                 <div>
-
-                                    <input type="checkbox">
-
+                                    <?= $form->field($model, 'ch_info')->checkbox([
+                                        'label' => '',
+                                    ]);
+                                    //<input type="checkbox">
+                                    ?>
                                 </div>
 
                                 <div class="f-auto" >
-                                    <b>Информация для клиента</b>
+                                    <b><?= Html::encode($model->info_name); ?></b>
                                 </div>
 
                                 <div class="btn-group">
@@ -155,8 +195,7 @@ $this->title = 'Редактор бланка';
 
                             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                                 <tbody class="text-left">
-
-                                Тут форматированный текст
+                                <?= yii\helpers\HtmlPurifier::process($model->info_text); ?>
                                 </tbody>
                             </table>
 
