@@ -59,6 +59,11 @@ $config = [
         'urlManager' => require __DIR__ . '/urlManager.php',
 
     ],
+    'container' => [
+        'definitions' => [
+            'dosamigos\ckeditor\CKEditor' => require (__DIR__ . '/ckeditor.php'),
+        ],
+    ],
     'params' => $params,
 ];
 

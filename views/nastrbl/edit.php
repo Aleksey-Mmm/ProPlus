@@ -12,6 +12,7 @@
 /* @var $model app\models\blank\NastrBlank */
 
 
+use dosamigos\ckeditor\CKEditor;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -195,7 +196,10 @@ $this->title = 'Редактор бланка';
 
                             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                                 <tbody class="text-left">
-                                <?= yii\helpers\HtmlPurifier::process($model->info_text); ?>
+                                <?= $form->field($model, 'info_text')->widget(CKEditor::class, [
+                                    'options' => ['rows' => 6],
+                                    //'preset' => 'basic'
+                                ])->label(false); ?>
                                 </tbody>
                             </table>
 
