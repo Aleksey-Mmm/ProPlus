@@ -144,9 +144,9 @@ $this->title = 'Редактор бланка';
                                     //<input type="checkbox">
                                     ?>
                                 </div>
-                                <?= $form->field($model, 'comment_name')
-                                    ->hiddenInput(['id'=>'comNameHide'])
-                                    ->label(false);
+                                <?php //$form->field($model, 'comment_name')
+                                    //->hiddenInput(['id'=>'comNameHide'])
+                                    //->label(false);
                                 //<input class="form-control" type="text" placeholder="Префикс для нумерации бланка" maxlength="4">
                                 ?>
                                 <div id="comName" class="f-auto" >
@@ -209,10 +209,7 @@ $this->title = 'Редактор бланка';
                 </div>
             </div>
         </div>
-        <?php
-        $form::end();
-//    </div>
-        ?>
+
 
     <!-- Модальгное окно 1 -->
 
@@ -225,16 +222,23 @@ $this->title = 'Редактор бланка';
                 </div>
 
                 <div class="modal-body">
-                    <input id="newName" class="form-control" type="text" placeholder="Наименование заголовка поля">
+                    <?= $form->field($model, 'comment_name')
+                        ->textInput(['id'=>'newName', 'class'=>'form-control'])
+                        ->label(false);
+                    //<input id="newName" class="form-control" type="text" value="">
+                    ?>
+
                 </div>
 
                 <div class="modal-footer">
 
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal" onclick="
-                          $('#comName').html($('#newName').val());
+                        var nName = $('#newName').val();
+                          $('#comName').html('<b>'+nName+'</b>');
+                          //$('#comNameHide').val(nName);
                         ">
-                            Сохранить</button>
+                            Принять</button>
                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-unchecked"></span></button>
                     </div>
 
@@ -246,6 +250,9 @@ $this->title = 'Редактор бланка';
     </div>
     <!-- /Модальгное окно 1 -->
 
-
+    <?php
+    $form::end();
+    //    </div>
+    ?>
 
 </div>

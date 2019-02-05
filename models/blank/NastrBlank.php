@@ -45,8 +45,8 @@ class NastrBlank extends ActiveRecord
             [['predpr_id', 'ch_enable', 'ch_sprav_org', 'ch_sprav_chast', 'ch_calendar', 'ch_okaz_uslug', 'ch_obsl_oborud', 'ch_sn_in_blank', 'ch_ispoln', 'ch_comment', 'ch_info'], 'integer'],
             [['info_text'], 'string'],
             [['comment_name', 'info_name'], 'string', 'max' => 255],
-            ['name', 'required', 'message' => 'Не может быть пустым' ],
-            ['name', 'string', 'min' => 3, 'tooShort' => 'Не менее 3-х символов'],
+            [['name', 'comment_name'], 'required', 'message' => 'Не может быть пустым' ],
+            [['name', 'comment_name'], 'string', 'min' => 3, 'tooShort' => 'Не менее 3-х символов'],
             [['prefix'], 'string', 'max' => 10],
         ];
     }
