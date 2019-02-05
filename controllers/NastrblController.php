@@ -12,6 +12,7 @@ namespace app\controllers;
 
 
 use app\models\blank\NastrBlank;
+use app\models\predpr\Predpr;
 use app\models\sotrudnik\Sotrudnik;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
@@ -86,24 +87,33 @@ class NastrblController extends Controller
             throw new ForbiddenHttpException('Ошибка редактирования настройки бланка!');
         }
 
-        if ($model->load(\Yii::$app->request->post())) {
+        /** @var Predpr $predpr */
+        $predpr = Predpr::findOne($predpr_id);
+        $default = $predpr->def_blank_id == $model->id; //флаг, что бланк является бланком по умолчанию
+
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             //var_dump(\Yii::$app->request->post());
+            \Yii::$app->session->setFlash('success', 'Настройки бланка сохранены.');
+
             if (ArrayHelper::keyExists('default', \Yii::$app->request->post())) {
-                //echo "Eeeeeeee"; бланк назначен по умолчанию. TODO: прописать в предприятии.
+                // бланк назначен по умолчанию.
+                if ($predpr->def_blank_id != $model->id) {
+                    $predpr->def_blank_id = $model->id;
+                    $predpr->save();
+                }
             } else {
-                //echo "Nooooooo";
+                //бланк не является бланком по умолчанию
+                if ($predpr->def_blank_id == $model->id) { //
+                    //если раньше он был по умолчанию, то сбрасываем его
+                    $predpr->def_blank_id = 0;
+                    $predpr->save();
+                }
             }
-//            if (empty($model->dirtyAttributes)) {
-//                \Yii::$app->session->setFlash('success', 'Изменений нет');
-//
-//            } else {
-//                \Yii::$app->session->setFlash('warning', 'Есть изменения!');
-//                var_dump($model->dirtyAttributes);
-//            }
+
             return $this->redirect(['nastrbl/index']);
         }
 
-        return $this->render('edit', compact('model'));
+        return $this->render('edit', compact('model', 'default'));
     }
 
 

@@ -10,6 +10,7 @@
 
 /* @var $this yii\web\View */
 /* @var $model app\models\blank\NastrBlank */
+/* @var $default boolean */
 
 
 use dosamigos\ckeditor\CKEditor;
@@ -63,7 +64,7 @@ $this->title = 'Редактор бланка';
                         ?>
                     </div>
                     <div class="checkbox lt">
-                        <label><input type="checkbox" name="default" value="1">Бланк по умолчанию</label>
+                        <label><input type="checkbox" name="default" value="1" <?= ($default) ? 'checked="checked"':'' ?> >Бланк по умолчанию</label>
                     </div>
                     <?= $form->field($model, 'name')
                         ->textInput(['class' => 'form-control', 'placeholder'=>'Наименование услуги'])
