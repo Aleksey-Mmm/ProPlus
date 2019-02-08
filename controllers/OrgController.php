@@ -25,9 +25,19 @@ class OrgController extends Controller
             ],
         ];
     }
+
+    /**
+     *
+     * @return string
+     */
     public function actionEdit()
     {
-        return $this->render('edit');
+        /** @var Org $org */
+        $org = new Org();
+        if ($org->load(\Yii::$app->request->post())) {
+            var_dump( \Yii::$app->request->post());
+        }
+        return $this->render('edit', compact('org'));
     }
 
     public function actionIndex()

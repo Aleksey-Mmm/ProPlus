@@ -18,7 +18,7 @@ $this->title = 'Выбор организации';
                 </div>
 
                 <div class="btn-group">
-                    <a href="<?= Url::to(['front/page9']); ?>" class="btn btn-sm btn-default">Новая</a>
+                    <a href="<?= Url::to(['org/edit']); ?>" class="btn btn-sm btn-default">Новая</a>
                     <a href="<?= Url::to(['front/page1']); ?>" class="btn btn-sm btn-default"><span
                                 class="glyphicon glyphicon-unchecked"></span></a>
                 </div>
