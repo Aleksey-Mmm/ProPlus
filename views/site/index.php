@@ -48,7 +48,7 @@ $this->title = 'Сервис';
         
         <div class="col-xs-1">
         </div> 
-        <a href="<?= Url::to(['front/page23']); ?>">
+        <a href="<?= Url::to(['site/sprav']); ?>">
         <div class="alert alert-success cur shadow col-xs-5">
             <i class="glyphicon glyphicon-list gi-4x"> </i> <br> Справочники 
         </div>

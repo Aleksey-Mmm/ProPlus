@@ -9,7 +9,8 @@
 
 /* @var $this yii\web\View */
 /* @var $model app\models\blank\NastrBlank */
-/* @var $uslugi[] app\models\blank\NastrBlank */
+
+/* @var $uslugi [] app\models\blank\NastrBlank */
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
@@ -40,31 +41,29 @@ $this->title = 'Услуги';
 
         <div class="panel-body">
 
-<?= $model->predpr_id ?>
             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                 <tbody class="text-left">
                 <?php
-                foreach ($uslugi as $usluga):
-                ?>
-                <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?=/** @var \app\models\blank\NastrBlank $usluga */ Url::to(['nastrbl/edit', 'nid'=>$usluga->id]); ?>'"><?=
-                        Html::encode($usluga->name); ?></td>
-                </tr>
+                if ($uslugi):
+                    foreach ($uslugi as $usluga):
+                        ?>
+                        <tr class="cur">
+                            <td class="text-left"
+                                onClick="document.location='<?= /** @var \app\models\blank\NastrBlank $usluga */
+                                Url::to(['nastrbl/edit', 'nid' => $usluga->id]); ?>'"><?=
+                                Html::encode($usluga->name); ?></td>
+                        </tr>
+                    <?php
+                    endforeach;
+                else:
+                    ?>
+
+                    <tr class="cur">
+                        <td class="text-left">Услуги не найдены.</td>
+                    </tr>
                 <?php
-                endforeach;
+                endif;
                 ?>
-
-                <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'">Услуга 1</td>
-                </tr>
-
-                <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'">Услуга 2</td>
-                </tr>
-                <tr class="cur">
-                    <td class="text-left" onClick="document.location='<?= Url::to(['front/page2']); ?>'">Услуга 3</td>
-                </tr>
-
                 </tbody>
             </table>
 

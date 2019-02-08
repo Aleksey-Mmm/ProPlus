@@ -25,10 +25,10 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
+                'only' => ['logout', 'sprav'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'sprav'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -57,6 +57,17 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    /**
+     * выводит список справочников.
+     * доступна только зарегистрированным
+     *
+     * @return string
+     */
+    public function actionSprav()
+    {
+        return $this->render('sprav');
     }
 
     /**
