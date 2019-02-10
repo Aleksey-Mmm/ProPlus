@@ -53,6 +53,7 @@ class NastrblController extends Controller
     public function actionAdd()
     {
         $model = new NastrBlank();
+        $model->loadDefaultValues();
         $model->predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id;
         if ($model->load(\Yii::$app->request->post())) {
             if ($model->save()) {
