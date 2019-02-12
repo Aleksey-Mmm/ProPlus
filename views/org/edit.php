@@ -24,9 +24,9 @@ $this->title = 'Редактор';
                             Сохранить <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><?= Html::submitButton('Сохранить', ['class' => 'btn btn-sm btn-default', 'name'=>'sss']) ?></li>
+                            <li><?= Html::submitButton('Сохранить', ['class' => 'btn btn-sm btn-default', 'name'=>'save']) ?></li>
                             <li class="divider"></li>
-                            <li><?= Html::submitButton('Сохранить и выбрать', ['class' => 'btn btn-sm btn-default', 'name'=>'123']) ?></li>
+                            <li><?= Html::submitButton('Сохранить и выбрать', ['class' => 'btn btn-sm btn-default', 'name'=>'select']) ?></li>
 
                         </ul>
                     </div>
@@ -41,7 +41,7 @@ $this->title = 'Редактор';
                 <div class="form-group">
                     <label>Краткое наименование организации (для форм)</label>
                     <?= $form->field($org, 'short_name')
-                        ->textInput(['class'=>'form-control'])
+                        ->textInput(['class'=>'form-control', 'placeholder'=>'Краткое наименование'])
                         ->label(false);
                     //<input class="form-control" type="text" placeholder="Краткое наименование">
                     ?>
@@ -50,14 +50,20 @@ $this->title = 'Редактор';
 
                 <div class="form-group">
                     <label>Полное наименование организации (для печати)</label>
-                    <input class="form-control" type="text" placeholder="Полное наименование">
+                    <?= $form->field($org, 'full_name')
+                        ->textInput(['class'=>'form-control', 'placeholder'=>'Полное наименование'])
+                        ->label(false);
+                    ?>
                 </div>
 
                 <div class="form-group">
                     <label>ОГРН</label>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control" type="text" placeholder="ОГРН">
+                            <?= $form->field($org, 'ogrn')
+                                ->textInput(['class'=>'form-control', 'placeholder'=>'ОГРН'])
+                                ->label(false);
+                            ?>
                         </div>
                         <div class="col-xs-6">
                         </div>
@@ -68,7 +74,10 @@ $this->title = 'Редактор';
                     <label>ИНН</label>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control" type="text" placeholder="ИНН">
+                            <?= $form->field($org, 'inn')
+                                ->textInput(['class'=>'form-control', 'placeholder'=>'ИНН'])
+                                ->label(false);
+                            ?>
                         </div>
                         <div class="col-xs-6">
                         </div>
@@ -79,7 +88,10 @@ $this->title = 'Редактор';
                     <label>КПП</label>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control" type="text" placeholder="КПП">
+                            <?= $form->field($org, 'kpp')
+                                ->textInput(['class'=>'form-control', 'placeholder'=>'КПП'])
+                                ->label(false);
+                            ?>
                         </div>
                         <div class="col-xs-6">
                         </div>
@@ -90,7 +102,10 @@ $this->title = 'Редактор';
                     <label>ОКПО</label>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control" type="text" placeholder="ОКПО">
+                            <?= $form->field($org, 'okpo')
+                                ->textInput(['class'=>'form-control', 'placeholder'=>'ОКПО'])
+                                ->label(false);
+                            ?>
                         </div>
                         <div class="col-xs-6">
                         </div>
@@ -101,7 +116,10 @@ $this->title = 'Редактор';
                     <label>ОКВЭД</label>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input class="form-control" type="text" placeholder="ОКВЭД">
+                            <?= $form->field($org, 'okved')
+                                ->textInput(['class'=>'form-control', 'placeholder'=>'ОКВЭД'])
+                                ->label(false);
+                            ?>
                         </div>
                         <div class="col-xs-6">
                         </div>
@@ -110,12 +128,18 @@ $this->title = 'Редактор';
 
                 <div class="form-group">
                     <label>Юридический адрес</label>
-                    <input class="form-control" type="text" placeholder="Юридический адрес">
+                    <?= $form->field($org, 'jur_address')
+                        ->textInput(['class'=>'form-control', 'placeholder'=>'Юридический адрес'])
+                        ->label(false);
+                    ?>
                 </div>
 
                 <div class="form-group">
                     <label>Почтовый адрес</label>
-                    <input class="form-control" type="text" placeholder="Почтовый адрес">
+                    <?= $form->field($org, 'post_address')
+                        ->textInput(['class'=>'form-control', 'placeholder'=>'Почтовый адрес'])
+                        ->label(false);
+                    ?>
                 </div>
 
         </div>

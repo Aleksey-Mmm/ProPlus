@@ -38,7 +38,6 @@ $this->title = 'Выбор организации';
         </div>
         <div class="panel-body">
 
-
             <table class="table table-bordered  table-striped  table-hover  table-condensed ">
                 <tbody class="text-left">
                 <tr>
