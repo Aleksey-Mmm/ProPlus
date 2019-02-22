@@ -113,25 +113,9 @@ $this->registerJs('
                 <div class="modal-body">
 
                     <!-- Панель Реквизиты -->
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <div class="flex_left">
-                                <div class="f-auto">
-
-                                </div>
-
-                                <div class="btn-group">
-                                    <a href="<?= Url::to(['front/page9']); ?>"
-                                       class="btn btn-sm btn-default">Редактор</a>
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span
-                                                class="glyphicon glyphicon-unchecked"></span></button>
-                                </div>
-                            </div>
-                        </div>
 
                         <?= $this->render('_org', compact('org')); ?>
 
-                    </div>
                 </div>
             </div>
         </div>

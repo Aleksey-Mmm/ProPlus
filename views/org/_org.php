@@ -5,11 +5,28 @@
  * Date: 20.02.2019
  * Time: 13:15
  */
+
+use yii\helpers\Url;
+
 /* @var $org app\models\Org */
 ?>
+<div id="my_org">
+    <div class="panel panel-success">
+<div class="panel-heading">
+    <div class="flex_left">
+        <div class="f-auto">
 
-<div id="my_org" class="panel-body">
+        </div>
 
+        <div class="btn-group">
+            <a href="<?= Url::to(['org/edit', 'oid'=>$org->id]); ?>"
+               class="btn btn-sm btn-default">Редактор</a>
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span
+                        class="glyphicon glyphicon-unchecked"></span></button>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
 
     <table class="table table-bordered  table-striped  table-condensed ">
         <tbody class="text-left">
@@ -56,5 +73,6 @@
         </tbody>
     </table>
 
-
+</div>
+    </div>
 </div>

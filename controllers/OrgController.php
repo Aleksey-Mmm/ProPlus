@@ -98,6 +98,7 @@ class OrgController extends Controller
         }
 
         $org = new Org(); // пустая организация, для первоначального рендеринга модального окна
+
         $orgs = Org::find()->
         where(['predpr_id' => $predpr_id])->
         orderBy('short_name')->
