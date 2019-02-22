@@ -18,13 +18,32 @@ class OrgController extends Controller
                 //'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'add', 'edit'],
+                        'actions' => ['index', 'add', 'edit', 'detail'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
             ],
         ];
+    }
+
+    /**
+     * @param int $oid id организации чьи подробности запрашиваем
+     * @throws ForbiddenHttpException
+     */
+    public function actionDetail(int $oid)
+    {
+        /** @var Org $org */
+        $predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id;
+        if ($oid > 0) {
+            $org = Org::findOne(['id'=>$oid, 'predpr_id'=>$predpr_id]);
+            if (!$org) {
+                throw new ForbiddenHttpException('Ошибка редактирования реквизитов организации!');
+            }
+        }
+
+
+
     }
 
     /**
@@ -61,14 +80,29 @@ class OrgController extends Controller
         return $this->render('edit', compact('org'));
     }
 
-    public function actionIndex()
+    /**
+     * @param int $oid id организации которую выбрали
+     * @return string
+     * @throws ForbiddenHttpException
+     */
+    public function actionIndex(int $oid=0)
     {
-        $predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id; // \Yii::$app->user->id;
+        $predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id;
+
+        if (\Yii::$app->request->isAjax) {
+            $org = Org::findOne(['id'=>$oid, 'predpr_id' => $predpr_id]);
+            if (!$org) {
+                throw new ForbiddenHttpException('Ошибка доступа к организации!');
+            }
+            return $this->renderPartial('_org', ['org'=>$org]);
+        }
+
+        $org = new Org(); // пустая организация, для первоначального рендеринга модального окна
         $orgs = Org::find()->
         where(['predpr_id' => $predpr_id])->
         orderBy('short_name')->
         all();
-        return $this->render('index', compact('orgs'));
+        return $this->render('index', compact('orgs', 'org'));
     }
 
 }

@@ -5,11 +5,25 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\Pjax;
+
+Pjax::begin(); Pjax::end();
 
 $this->title = 'Выбор организации';
+
+//\app\assets\OrgAsset::register($this);
+$this->registerJs('
+    $(".my_button").on("click", function(e) {
+        var oid = this.dataset.oid;
+        //e.preventDefault(); //отменяем стандартный get для ссылки    
+        $.pjax.reload({container:"#my_org", url:"org?oid="+oid, replace:false});
+        //$("#myModal1").modal("show")
+    });
+');
 ?>
 <div class="jumbotron">
     <!-- Панель Выбор организации -->
+
     <div class="panel panel-success">
         <div class="panel-heading">
             <div class="flex_left">
@@ -51,8 +65,8 @@ $this->title = 'Выбор организации';
                             <td class="text-left"><?= /** @var \app\models\Org $org */
                                 Html::encode($org->short_name); ?></td>
                             <td class="text-left wb2 ct">
-                                <a href="#myModal1" class="btn btn-xs btn-default" data-toggle="modal"><span
-                                            class="glyphicon glyphicon-search"></span></a>
+                                <button class="btn btn-xs btn-default my_button" data-oid="<?= $org->id ?>" data-toggle="modal" data-target="#myModal1"><span
+                                            class="glyphicon glyphicon-search"></span></button>
                             </td>
                         </tr>
                         <?php
@@ -88,6 +102,7 @@ $this->title = 'Выбор организации';
 
 
     <!-- Модальгное окно -->
+
     <div id="myModal1" class="modal fade">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -111,62 +126,10 @@ $this->title = 'Выбор организации';
                                     <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span
                                                 class="glyphicon glyphicon-unchecked"></span></button>
                                 </div>
-
                             </div>
-
                         </div>
-                        <div class="panel-body">
 
-
-                            <table class="table table-bordered  table-striped  table-condensed ">
-                                <tbody class="text-left">
-                                <tr>
-                                    <th colspan="2" class="ct">Организация</th>
-
-
-                                </tr>
-                                <tr>
-                                    <td class="lt wb30">Краткое наименование</td>
-                                    <td class="lt">Педприятие 1 ООО</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">Полное наименование</td>
-                                    <td class="lt">Общество с ограниченной ответсвенностью "Педприятие 1"</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">ОГРН</td>
-                                    <td class="lt">98143213214</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">ИНН</td>
-                                    <td class="lt">143501420835</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">КПП</td>
-                                    <td class="lt">143501001</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">ОКПО</td>
-                                    <td class="lt">50451</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">ОКВЭД</td>
-                                    <td class="lt">50807445</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">Юридический адрес</td>
-                                    <td class="lt">674014 г. Жиганск ул. Хорошая 5, кв. 3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lt">Почтовый адрес</td>
-                                    <td class="lt">674014 г. Жиганск ул. Хорошая 5, кв. 3</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-
-
-                        </div>
+                        <?= $this->render('_org', compact('org')); ?>
 
                     </div>
                 </div>
