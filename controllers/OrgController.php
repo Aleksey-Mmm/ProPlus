@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Org;
 use app\models\sotrudnik\Sotrudnik;
+use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
@@ -99,11 +100,18 @@ class OrgController extends Controller
 
         $org = new Org(); // пустая организация, для первоначального рендеринга модального окна
 
-        $orgs = Org::find()->
-        where(['predpr_id' => $predpr_id])->
-        orderBy('short_name')->
-        all();
-        return $this->render('index', compact('orgs', 'org'));
+        $query = Org::find()->where(['predpr_id' => $predpr_id]);
+        $countQuery = clone $query;
+        $pages = new Pagination([
+            'totalCount' => $countQuery->count(),
+            'pageSize' => Org::PER_PAGE,
+        ]);
+        $orgs = $query
+            ->offset($pages->offset)
+            ->limit($pages->limit)
+            ->orderBy('short_name')
+            ->all();
+        return $this->render('index', compact('orgs', 'org', 'pages'));
     }
 
 }

@@ -84,15 +84,12 @@ $this->title = 'Выбор организации';
                 </tbody>
             </table>
 
-            <ul class="pagination pagination-sm">
-                <li><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
+            <?= \yii\widgets\LinkPager::widget([
+                'pagination' => $pages,
+                'options' => [
+                    'class' => 'pagination pagination-sm',
+                    ],
+            ]); ?>
 
         </div>
 
