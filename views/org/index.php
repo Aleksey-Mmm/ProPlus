@@ -7,19 +7,20 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
 
-Pjax::begin(); Pjax::end();
+//Pjax::begin(); Pjax::end();
 
 $this->title = 'Выбор организации';
 
 //\app\assets\OrgAsset::register($this);
-$this->registerJs('
-    $(".my_button").on("click", function(e) {
-        var oid = this.dataset.oid;
-        //e.preventDefault(); //отменяем стандартный get для ссылки    
-        $.pjax.reload({container:"#my_org", url:"org?oid="+oid, replace:false});
-        //$("#myModal1").modal("show")
-    });
-');
+
+//$this->registerJs('
+//    $(".my_button").on("click", function(e) {
+//        var oid = this.dataset.oid;
+//        //e.preventDefault(); //отменяем стандартный get для ссылки
+//        $.pjax.reload({container:"#my_org", url:"org?oid="+oid, replace:false});
+//        //$("#myModal1").modal("show")
+//    });
+//');
 ?>
 <div class="jumbotron">
     <!-- Панель Выбор организации -->
@@ -124,3 +125,11 @@ $this->registerJs('
     <!-- /Модальгное окно -->
 
 </div>
+<?php
+$this->registerJs("
+    $('.my_button').on('click', function(){
+        var oid = $(this).attr('data-oid');
+        $('#myModal1').find('.modal-body').load('org?oid=' + oid);
+    });
+");
+?>
