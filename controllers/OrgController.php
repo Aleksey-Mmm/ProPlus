@@ -11,6 +11,8 @@ use yii\web\ForbiddenHttpException;
 
 class OrgController extends Controller
 {
+    const PER_PAGE = 3;  //кол-во организаций выводимых на странице
+
     public function behaviors()
     {
         return [
@@ -55,6 +57,7 @@ class OrgController extends Controller
      */
     public function actionEdit($oid = 0)
     {
+
         /** @var Org $org */
         $predpr_id = Sotrudnik::findOne(\Yii::$app->user->id)->predpr_id;
         if ($oid > 0) {
@@ -74,7 +77,13 @@ class OrgController extends Controller
                     \Yii::$app->session->setFlash('success', 'Реквизиты организации сохранены.');
                 }
             }
-           return $this->redirect(['org/']);
+            if (\Yii::$app->request->get('per-page')) { //если есть пагинация, чтоб вернуться на ту же страницу
+                $request = \Yii::$app->request;
+                $backUrl = ['org/', 'page'=>$request->get('page'), 'per-page'=>$request->get('per-page')];
+            } else {
+                $backUrl = ['org/'];
+            }
+           return $this->redirect($backUrl);
             //var_dump( \Yii::$app->request->post());
         }
 
@@ -104,7 +113,7 @@ class OrgController extends Controller
         $countQuery = clone $query;
         $pages = new Pagination([
             'totalCount' => $countQuery->count(),
-            'pageSize' => Org::PER_PAGE,
+            'pageSize' => self::PER_PAGE,
         ]);
         $orgs = $query
             ->offset($pages->offset)

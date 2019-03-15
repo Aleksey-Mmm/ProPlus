@@ -23,8 +23,6 @@ use Yii;
 class Org extends \yii\db\ActiveRecord
 {
 
-    const PER_PAGE = 3;  //кол-во организаций выводимых на странице
-
     /**
      * {@inheritdoc}
      */

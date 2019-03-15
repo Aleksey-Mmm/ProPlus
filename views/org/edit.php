@@ -31,7 +31,7 @@ $this->title = 'Редактор';
                         </ul>
                     </div>
                     <a href="<?= Url::to(['org/']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-saved"></span></a>
-                    <a href="<?= Url::to(['org/']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
+                    <a href="<?= Url::current(['org/']); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-unchecked"></span></a>
                 </div>
             </div>
         </div>

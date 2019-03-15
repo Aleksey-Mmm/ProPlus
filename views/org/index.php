@@ -21,6 +21,9 @@ $this->title = 'Выбор организации';
 //        //$("#myModal1").modal("show")
 //    });
 //');
+
+\app\assets\ModalAsset::register($this);
+
 ?>
 <div class="jumbotron">
     <!-- Панель Выбор организации -->
@@ -33,7 +36,7 @@ $this->title = 'Выбор организации';
                 </div>
 
                 <div class="btn-group">
-                    <a href="<?= Url::to(['org/edit']); ?>" class="btn btn-sm btn-default">Новая</a>
+                    <a href="<?= Url::current(['org/edit']); ?>" class="btn btn-sm btn-default">Новая</a>
                     <a href="<?= Url::to(['front/page1']); ?>" class="btn btn-sm btn-default"><span
                                 class="glyphicon glyphicon-unchecked"></span></a>
                 </div>
@@ -122,11 +125,3 @@ $this->title = 'Выбор организации';
     <!-- /Модальгное окно -->
 
 </div>
-<?php
-$this->registerJs("
-    $('.my_button').on('click', function(){
-        var oid = $(this).attr('data-oid');
-        $('#myModal1').find('.modal-body').load('org?oid=' + oid);
-    });
-");
-?>

@@ -19,7 +19,7 @@ use yii\helpers\Url;
         </div>
 
         <div class="btn-group">
-            <a href="<?= Url::to(['org/edit', 'oid'=>$org->id]); ?>"
+            <a href="<?= Url::current(['org/edit', 'oid'=>$org->id]); ?>"
                class="btn btn-sm btn-default">Редактор</a>
             <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><span
                         class="glyphicon glyphicon-unchecked"></span></button>
@@ -27,7 +27,6 @@ use yii\helpers\Url;
     </div>
 </div>
 <div class="panel-body">
-
     <table class="table table-bordered  table-striped  table-condensed ">
         <tbody class="text-left">
         <tr>
