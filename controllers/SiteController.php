@@ -8,6 +8,7 @@ use app\models\sotrudnik\SignupForm;
 use app\models\sotrudnik\Sotrudnik;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\Response;
@@ -67,6 +68,7 @@ class SiteController extends Controller
      */
     public function actionSprav()
     {
+        Url::remember();
         return $this->render('sprav');
     }
 
