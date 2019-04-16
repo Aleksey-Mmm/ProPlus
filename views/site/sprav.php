@@ -34,7 +34,7 @@ $this->title = 'Справочники';
                     Справочники
                 </div>
                 <a href="<?= Url::to(['org/']); ?>" class="list-group-item lt">Организации</a>
-                <a href="<?= Url::to(['front/page7']); ?>" class="list-group-item lt">Частные лица</a>
+                <a href="<?= Url::to(['fizlico/']); ?>" class="list-group-item lt">Частные лица</a>
                 <a href="#" class="list-group-item lt">Сотрудники</a>
                 <a href="<?= Url::to(['front/page14']); ?>" class="list-group-item lt">Услуги</a>
                 <a href="<?= Url::to(['front/page15']); ?>" class="list-group-item lt">Оборудование</a>
